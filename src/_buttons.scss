@@ -1,0 +1,97 @@
+@function set-button-text-color($color) {
+    @if (lightness( $color ) > 55) {
+      @return $button-text-dark;
+    }
+    @else {
+      @return $button-text-white;
+    }
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  border: 0;
+  border-radius: $border-radius;
+  outline: 0;
+  position: relative;
+  cursor: pointer;
+
+
+  //adding a pseudo before element for the focus effect:
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    opacity: 0.25;
+    transition: .25s box-shadow;
+  }
+}
+
+.btn-lg {
+  @extend .btn;
+  font-size: 1.25rem;
+}
+
+.btn-sm {
+  @extend .btn;
+  font-size: .75rem;
+}
+
+@each $name, $color in $colors {
+  .btn-#{$name} {
+    color: set-button-text-color($color);
+    background-color: #{$color};
+
+    &:hover {
+      background-color: darken($color, 5%);
+    }
+    &:active {
+      background-color: darken($color, 2.5%);
+    }
+    &:focus {
+      &::before {
+        box-shadow: 0 0 0 $button-focus-width $color;
+      }
+    }
+  }
+
+  .btn-alt-#{$name} {
+    border: $border-width solid $color;
+    color: $color;
+    background-color: transparent;
+    padding: calc(0.5em - #{$border-width}) calc(1em - #{$border-width});
+    &:hover {
+      color: set-button-text-color($color);
+      background-color: #{$color};
+    }
+    &:active {
+      color: set-button-text-color($color);
+      background-color: darken($color, 2.5%);
+    }
+    &:focus {
+      &::before {
+        box-shadow: 0 0 0 $button-focus-width $color;
+      }
+    }
+  }
+}
+
+/* Button Groups */
+.btn-group {
+  .btn {
+    border-radius: 0;
+    margin-right: $border-width * -1;
+    float: left;
+  }
+  .btn:first-child {
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+  .btn:last-child {
+    border-radius: 0 $border-radius $border-radius 0;
+  }
+  @include clearfix;
+}

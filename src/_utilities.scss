@@ -1,0 +1,193 @@
+@mixin clearfix() {
+  &::after {
+    content: "";
+    float: none;
+    clear: both;
+    display: table;
+  }
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+/*--------------
+  Text
+--------------*/
+
+@each $align in $text-align {
+  .text-#{$align} {
+    text-align: $align !important;
+  }
+}
+
+@each $transform in $text-transform {
+  .text-#{$transform} {
+    text-transform: $transform !important;
+  }
+}
+
+/*--------------
+  Color
+--------------*/
+
+@each $name, $color in $colors {
+  .text-#{$name} {
+    color: $color !important;
+  }
+  .bg-#{$name} {
+    background-color: $color !important;
+  }
+}
+
+/*--------------
+  Spacing
+--------------*/
+
+@mixin spacing-utils($prop, $prop-short, $bp-space-name, $space) {
+  .#{$prop-short}-#{$bp-space-name} {
+    #{$prop}: $space !important;
+  }
+  .#{$prop-short}t-#{$bp-space-name} {
+    #{$prop}-top: $space !important;
+  }
+  .#{$prop-short}b-#{$bp-space-name} {
+    #{$prop}-bottom: $space !important;
+  }
+  .#{$prop-short}l-#{$bp-space-name} {
+    #{$prop}-left: $space !important;
+  }
+  .#{$prop-short}r-#{$bp-space-name} {
+    #{$prop}-right: $space !important;
+  }
+  .#{$prop-short}x-#{$bp-space-name} {
+    #{$prop}-left: $space !important;
+    #{$prop}-right: $space !important;
+  }
+  .#{$prop-short}y-#{$bp-space-name} {
+    #{$prop}-top: $space !important;
+    #{$prop}-bottom: $space !important;
+  }
+}
+
+/* Generate margins base */
+@each $space-name, $space in $spacers {
+  @include spacing-utils('margin', 'm', $space-name, $space);
+}
+
+/* Generate margins for $breakpoints */
+@each $bp-name, $bp-size in $breakpoints {
+  @media only screen and (min-width: $bp-size) {
+    @each $space-name, $space in $spacers {
+      @include spacing-utils('margin', 'm', #{$bp-name}-#{$space-name}, $space);
+    }
+  }
+}
+
+/* Generate paddings base */
+@each $space-name, $space in $spacers {
+  @include spacing-utils('padding', 'p', $space-name, $space);
+}
+
+/* Generate paddings for $breakpoints */
+@each $bp-name, $bp-size in $breakpoints {
+  @media only screen and (min-width: $bp-size) {
+    @each $space-name, $space in $spacers {
+      @include spacing-utils('padding', 'p', #{$bp-name}-#{$space-name}, $space);
+    }
+  }
+}
+
+/*--------------
+  Borders
+--------------*/
+.border-0 {
+  border: 0 !important;
+}
+.border {
+  border: $border-width solid $border-color !important;
+}
+.border-l {
+  border-left: $border-width solid $border-color !important;
+}
+.border-r {
+  border-right: $border-width solid $border-color !important;
+}
+.border-t {
+  border-top: $border-width solid $border-color !important;
+}
+.border-b {
+  border-bottom: $border-width solid $border-color !important;
+}
+
+/*--------------
+  Shadows
+--------------*/
+
+.shadow {
+  box-shadow: 0 0.25rem 0.75rem -0.25rem rgba(0,0,0,0.3);
+}
+
+.shadow-lg {
+  box-shadow: 0px 0.5rem 2rem -0.25rem rgba(0,0,0,0.3);
+}
+
+/*--------------
+  Border-radius
+--------------*/
+
+.round {
+  border-radius: $border-radius !important;
+}
+.round-r {
+  border-radius: 0 $border-radius $border-radius 0 !important;
+}
+.round-l {
+  border-radius: $border-radius 0 0 $border-radius !important;
+}
+.round-t {
+  border-radius: $border-radius $border-radius 0 0 !important;
+}
+.round-b {
+  border-radius: 0 0 $border-radius $border-radius !important;
+}
+
+/*--------------
+  Hover Effects
+--------------*/
+
+.hover-shadow {
+  @extend .shadow;
+  transition:
+    #{$hover-duration} transform,
+    #{$hover-duration} box-shadow;
+  &:hover {
+    @extend .shadow-lg;
+  }
+}
+
+.hover-up {
+  transition:
+    #{$hover-duration} transform,
+    #{$hover-duration} box-shadow;
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+
+/*--------------
+  Other Utilities
+--------------*/
+
+.disabled {
+  opacity: 0.5;
+}
+
+.no-pseudo {
+  &::after {
+    content: unset !important;
+  }
+  &::before {
+    content: unset !important;
+  }
+}

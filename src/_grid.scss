@@ -1,0 +1,65 @@
+@mixin make-col($size, $columns) {
+  width: percentage( $size / $columns );
+  min-height: 1px;
+  max-width: percentage( $size / $columns );
+  float: left;
+  padding-left: $gutter-width / 2;
+  padding-right: $gutter-width / 2;
+  margin-bottom: $gutter-width;
+}
+
+@mixin make-offset($size, $columns) {
+  margin-left: percentage( $size / $columns ) !important;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.container {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $gutter-width;
+  padding-right: $gutter-width;
+}
+
+.row {
+  display: relative;
+  margin-left: -$gutter-width / 2;
+  margin-right: -$gutter-width / 2;
+
+  &::after {
+    content: "";
+    float: none;
+    clear: both;
+    display: table;
+  }
+}
+
+[class^="col"] {
+  @include make-col(12, 12);
+}
+
+@for $i from 1 through $grid-columns {
+    .col-#{$i} {
+      @include make-col($i, $grid-columns);
+    }
+    .offset-#{$i} {
+      @include make-offset($i, $grid-columns);
+    }
+}
+
+@each $name, $size in $breakpoints {
+  @media only screen and (min-width: $size) {
+
+      @for $i from 1 through $grid-columns {
+        .col-#{$name}-#{$i} {
+          @include make-col($i, $grid-columns);
+        }
+        .offset-#{$name}-#{$i} {
+          @include make-offset($i, $grid-columns);
+        }
+    }
+  }
+}

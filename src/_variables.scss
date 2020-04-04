@@ -1,0 +1,70 @@
+/* --------------
+    COLORS
+-------------- */
+$colors: (
+  "primary": #27d679,
+  "secondary": #4f5a63,
+  "white": #FFFFFF,
+  "dark": #000000,
+  "light": #F0F0F0,
+  "danger": #f55718,
+  "success": #8ac902,
+  "warning": #f0ac0e,
+  "gray-1": #999,
+  "gray-2": #666,
+  "gray-3": #333,
+);
+
+/* --------------
+    Typography
+-------------- */
+$font-base-size: 16px;
+$font-family: sans-serif;
+$font-family-alt: serif;
+
+/* --------------
+    UTILITIES
+-------------- */
+
+/* spacing utilities */
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.5,
+  2: $spacer * 1,
+  3: $spacer * 1.5,
+  4: $spacer * 2.5,
+  5: $spacer * 4
+);
+
+/* text utilities */
+$text-align: right, center, left;
+$text-transform: uppercase, lowercase, capitalize;
+
+/* border */
+$border-color: map-get($colors, "gray-1");
+$border-width: 1px;
+$border-radius: 0.3rem;
+
+/* hover and state effects */
+$hover-duration: .5s;
+
+/* --------------
+    GRID
+-------------- */
+$grid-columns: 12;
+$breakpoints: (
+  "sm": 400px,
+  "md": 800px,
+  "lg": 1200px,
+);
+$gutter-width: map-get($spacers, 1);
+
+/* MENU */
+$menu-toggler-size: 26px;
+$menu-duration: .5s;
+
+/* Buttons */
+$button-text-white: map-get($colors, "white");
+$button-text-dark: map-get($colors, "dark");
+$button-focus-width: 0.25rem;

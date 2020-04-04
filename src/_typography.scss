@@ -1,0 +1,28 @@
+html {
+  font-size: $font-base-size;
+  font-family: $font-family;
+}
+
+.font-alt {
+  font-family: $font-family-alt;
+}
+
+h1, .h1 {
+  font-size: 2rem;
+}
+
+h2, .h2 {
+  font-size: 1.75rem;
+}
+
+h3, .h3 {
+  font-size: 1.5rem;
+}
+
+h4, .h4 {
+  font-size: 1.25rem;
+}
+
+h5, .h5 {
+  font-size: 1rem;
+}
