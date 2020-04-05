@@ -8,6 +8,6 @@
 @import 'grid';
 @import 'utilities';
 
-/* Component Styles */
-@import 'buttons';
-@import 'menu';
+/* Element Styles */
+@import './elements/buttons';
+@import './elements/nav';

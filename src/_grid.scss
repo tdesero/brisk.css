@@ -24,6 +24,12 @@
   padding-right: $gutter-width;
 }
 
+.container-full {
+  width: 100%;
+  padding-left: $gutter-width;
+  padding-right: $gutter-width;
+}
+
 .row {
   display: relative;
   margin-left: -$gutter-width / 2;

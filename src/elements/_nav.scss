@@ -1,0 +1,236 @@
+.nav-bar {
+  @extend .container-full;
+  padding: 0;
+  position: relative;
+  z-index: 999;
+  color: map-get($colors, "dark");
+  display: table;
+  height: $spacer * 4;
+  @include clearfix;
+}
+
+
+/*-------------------
+  Menu Logic
+-------------------*/
+
+.menu-container {
+  padding: map-get($spacers, 2);
+  background-color: inherit;
+  color: inherit;
+  display: table-cell;
+  vertical-align: middle;
+
+  .logo {
+    line-height: $line-height * 1rem;
+  }
+
+  &.open {
+    .menu-content {
+      transform: none;
+      //display: block;
+    }
+  }
+}
+
+.menu-content {
+  z-index: -1;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  //display: none;
+  padding: map-get($spacers, 2);
+  transform: translateY(-100%);
+  transition: $menu-duration transform;
+  //animation: $menu-duration menuAnimationFromTop;
+  background-color: inherit;
+
+  //menu types
+  &.menu-from-right {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    left: unset;
+    width: 300px;
+    transform: translateX(100%);
+    height: 100vh;
+  }
+
+  .menu-list {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    .menu-item {
+      padding-top: $spacer;
+      padding-bottom: $spacer;
+      border-bottom: $border-width solid #{darken(map-get($colors, "light"), 10%)};
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@mixin expand() {
+  .menu-toggler {
+    display: none;
+  }
+  .menu-content {
+    display: table;
+    animation: unset;
+    position: relative;
+    margin: 0;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    padding: 0;
+    z-index: 1;
+    transform: none;
+    transition: none;
+    background-color: transparent !important;
+
+    .menu-item {
+      padding: 0;
+      display: inline-block;
+      margin-left: $spacer;
+      border: 0;
+    }
+  }
+}
+
+/* Regular expanded style */
+.expand {
+  @include expand;
+}
+
+@each $name, $size in $breakpoints {
+  @media only screen and (min-width: $size) {
+    .expand-#{$name} {
+      @include expand;
+    }
+  }
+}
+
+
+/*-------------------
+  Menu Button Styles
+-------------------*/
+
+.menu-toggler {
+  position: relative;
+  height: $line-height * 1rem;
+  width: $menu-toggler-size;
+  padding: 0;
+  cursor: pointer;
+  text-align: center;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  margin-left: auto;
+  display: table;
+}
+
+.menu-icon {
+  z-index: 99;
+  display: block;
+  position: absolute;
+  top: calc(50% - #{$menu-toggler-size * 0.04 });
+  height: round($menu-toggler-size * 0.08);
+  width: $menu-toggler-size;
+  background-color: map-get($colors, "primary");
+
+  &::before, &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: map-get($colors, "primary");
+    transition: $menu-duration transform;
+  }
+  &::before {
+    bottom: round($menu-toggler-size/4);
+    left: 0;
+  }
+  &::after {
+    top: round($menu-toggler-size/4);
+    left: 0;
+  }
+
+  &.menu-style1 {
+    transition: $menu-duration background-color;
+  }
+
+  &.menu-style2 {
+    background-color: transparent;
+
+    &::before {
+      bottom: round($menu-toggler-size/6);
+    }
+
+    &::after {
+      top: round($menu-toggler-size/6);
+    }
+  }
+
+  &.menu-style3 {
+    transition: $menu-duration background-color;
+    &::after {
+      width: 70%;
+      transition:
+        $menu-duration transform,
+        $menu-duration width;
+    }
+  }
+}
+
+.open {
+  .menu-style1, .menu-style3 {
+    background-color: transparent;
+    &::before {
+      transform:
+        translateY(round($menu-toggler-size/4))
+        rotate(45deg);
+    }
+    &::after {
+      width: 100%;
+      transform:
+        translateY(round($menu-toggler-size/4) * -1)
+        rotate(-45deg);
+    }
+  }
+  .menu-style2 {
+    &::before {
+      transform:
+        translateY(round($menu-toggler-size/6))
+        rotate(45deg);
+    }
+    &::after {
+      transform:
+        translateY(round($menu-toggler-size/6) * -1)
+        rotate(-45deg);
+    }
+  }
+}
+
+/* Color Options for Menu-Icon */
+
+@each $name, $value in $colors {
+  .menu-icon-#{$name} {
+    background-color: $value;
+    &::after {
+      background-color: $value;
+    }
+    &::before {
+      background-color: $value;
+    }
+  }
+}

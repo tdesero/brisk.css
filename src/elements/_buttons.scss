@@ -74,7 +74,7 @@
     }
     &:focus {
       &::before {
-        box-shadow: 0 0 0 $button-focus-width $color;
+        box-shadow: 0 0 0 calc(#{$button-focus-width} + #{$border-width}) $color;
       }
     }
   }

@@ -191,3 +191,16 @@
     content: unset !important;
   }
 }
+
+.float-left {
+  float: left !important;
+}
+
+.float-right {
+  float: right !important;
+}
+
+/* For the navigation */
+.content-margin-fixed-menu {
+  margin-top: calc(#{$line-height * 1rem} + #{map-get($spacers, 2) * 2}) !important;
+}

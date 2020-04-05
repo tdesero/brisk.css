@@ -7,25 +7,24 @@
     <title>Brisk.css Test</title>
   </head>
   <body>
-    <div class="container">
-      <button class="menu-toggler">
-        <div class="menu-icon menu-style1"></div>
-      </button>
-      <button class="menu-toggler open">
-        <div class="menu-icon menu-style1"></div>
-      </button>
-      <button class="menu-toggler">
-        <div class="menu-icon menu-style2"></div>
-      </button>
-      <button class="menu-toggler open">
-        <div class="menu-icon menu-style2"></div>
-      </button>
-      <button class="menu-toggler">
-        <div class="menu-icon menu-style3"></div>
-      </button>
-      <button class="menu-toggler open">
-        <div class="menu-icon menu-style3"></div>
-      </button>
+    <div class="nav-bar bg-light">
+      <!--<span class="h3 float-left">Logo</span>-->
+      <div class="menu-container expand-md">
+        <span class="h3 logo float-left">Logo</span>
+        <button class="menu-toggler">
+          <div class="menu-icon menu-style1 menu-icon-primary"></div>
+        </button>
+        <div class="menu-content menu-from-right">
+          <ul class="menu-list">
+            <li class="menu-item"><a href="#">Mhm</a></li>
+            <li class="menu-item"><a href="#">Yo</a></li>
+            <li class="menu-item"><a href="#">Jepp</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
     </div>
 
     <div class="container">
@@ -97,6 +96,14 @@
       </div>
   </div>
 
-  <script> </script>
+  <script>
+  var togglers = document.querySelectorAll('.menu-toggler');
+  for (var i = 0; i < togglers.length; i++) {
+    togglers[i].onclick = function() {
+      this.parentElement.classList.toggle('open');
+    }
+  }
+
+  </script>
   </body>
 </html>
