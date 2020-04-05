@@ -137,10 +137,10 @@
   outline: 0;
   margin-left: auto;
   display: table;
+  z-index: 99;
 }
 
 .menu-icon {
-  z-index: 99;
   display: block;
   position: absolute;
   top: calc(50% - #{$menu-toggler-size * 0.04 });

@@ -3369,10 +3369,10 @@ h5, .h5 {
   outline: 0;
   margin-left: auto;
   display: table;
+  z-index: 99;
 }
 
 .menu-icon {
-  z-index: 99;
   display: block;
   position: absolute;
   top: calc(50% - 1.04px);
