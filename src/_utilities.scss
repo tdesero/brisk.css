@@ -84,6 +84,28 @@
   }
 }
 
+/* margin auto (not breakpoint specific)*/
+.m-auto {
+  margin: auto !important;
+}
+
+.mx-auto {
+  margin: 0 auto !important;
+}
+
+.my-auto {
+  margin: auto 0 !important;
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+
+.mr-auto {
+  margin-right: auto !important;
+}
+
+
 /* Generate paddings base */
 @each $space-name, $space in $spacers {
   @include spacing-utils('padding', 'p', $space-name, $space);
@@ -97,6 +119,41 @@
     }
   }
 }
+
+/*--------------
+  Display properties
+--------------*/
+
+@each $display-prop in $display-props {
+  .display-#{$display-prop} {
+    display: #{$display-prop} !important;
+  }
+}
+
+//hide with "display: none" for all breakpoints up & down
+@each $bp-name, $bp-size in $breakpoints {
+  @media only screen and (min-width: $bp-size) {
+    .hide-#{$bp-name}-up {
+      display: none !important;
+    }
+  }
+  @media only screen and (max-width: $bp-size - 0.02) {
+    .hide-#{$bp-name}-down {
+      display: none !important;
+    }
+  }
+}
+
+/*--------------
+  Positioning
+--------------*/
+
+@each $position-prop in $position-props {
+  .position-#{$position-prop} {
+    position: #{$position-prop} !important;
+  }
+}
+
 
 /*--------------
   Borders
@@ -200,7 +257,9 @@
   float: right !important;
 }
 
-/* For the navigation */
-.content-margin-fixed-menu {
-  margin-top: calc(#{$line-height * 1rem} + #{map-get($spacers, 2) * 2}) !important;
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

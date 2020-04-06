@@ -1,14 +1,22 @@
 .nav-bar {
   @extend .container-full;
+  top: 0;
   padding: 0;
   position: relative;
   z-index: 999;
   color: map-get($colors, "dark");
   display: table;
-  height: $spacer * 4;
+  height: $nav-bar-height;
   @include clearfix;
 }
 
+/* For fixed navigations */
+.pt-fixed-menu {
+  padding-top: $nav-bar-height;
+}
+.mt-fixed-menu {
+  margin-top: $nav-bar-height;
+}
 
 /*-------------------
   Menu Logic
@@ -21,14 +29,40 @@
   display: table-cell;
   vertical-align: middle;
 
+  a {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+      color: map-get($colors, 'primary');
+    }
+  }
+
   .logo {
     line-height: $line-height * 1rem;
+  }
+
+  &.overlay::before{
+    content: "";
+    z-index: -1;
+    background-color: #000;
+    opacity: 0;
+    transition: $menu-duration opacity;
   }
 
   &.open {
     .menu-content {
       transform: none;
       //display: block;
+    }
+
+    &.overlay::before {
+      content: "";
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: .25;
     }
   }
 }
@@ -53,9 +87,17 @@
     top: 0;
     right: 0;
     left: unset;
-    width: 300px;
+    width: $side-menu-width;
     transform: translateX(100%);
     height: 100vh;
+    padding-top: $nav-bar-height;
+  }
+
+  &.menu-from-left {
+    @extend .menu-from-right;
+    left: 0;
+    right: unset;
+    transform: translateX(-100%);
   }
 
   .menu-list {
@@ -66,15 +108,10 @@
     .menu-item {
       padding-top: $spacer;
       padding-bottom: $spacer;
-      border-bottom: $border-width solid #{darken(map-get($colors, "light"), 10%)};
+      border-bottom: $border-width solid $border-color;
 
       &:last-child {
         border-bottom: 0;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
       }
     }
   }
@@ -91,18 +128,29 @@
     margin: 0;
     width: auto;
     height: auto;
-    margin-left: auto;
+    //margin-left: auto;
     padding: 0;
     z-index: 1;
     transform: none;
     transition: none;
     background-color: transparent !important;
 
+    .menu-list {
+      margin-right: -$spacer/2;
+      margin-left: -$spacer/2;
+    }
+
+    li {
+      position: relative;
+    }
+
     .menu-item {
       padding: 0;
       display: inline-block;
-      margin-left: $spacer;
+      margin-left: $spacer/2;
+      margin-right: $spacer/2;
       border: 0;
+
     }
   }
 }
@@ -120,6 +168,64 @@
   }
 }
 
+/*-------------------
+  Submenus
+-------------------*/
+
+.menu-container {
+  /* style for the dropdown */
+  .has-sublist {
+    & > ul {
+      display: none;
+    }
+
+    &.open {
+      //Submenu style
+      & > ul {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 10em;
+        list-style: none;
+        margin: 0;
+        padding: $spacer;
+        margin-left: -$spacer;
+        background-color: #FFF;
+        box-shadow: 0 0.25rem 0.75rem -0.25rem rgba(0,0,0,0.3);
+        li {
+          padding: $spacer/2;
+        }
+      }
+    }
+  }
+}
+
+/* style for the accordion inside mobile menu */
+.menu-container.open .has-sublist {
+  & > ul {
+    display: none;
+  }
+
+  &.open {
+    //Submenu style
+    & > ul {
+      display: block;
+      position: relative;
+      list-style: none;
+      background-color: #FFF;
+      box-shadow: none;
+      padding-left: $spacer/2;
+      margin: 0;
+      li {
+        padding: $spacer/2;
+      }
+    }
+  }
+}
+
+
+
 
 /*-------------------
   Menu Button Styles
@@ -135,7 +241,7 @@
   background-color: transparent;
   border: 0;
   outline: 0;
-  margin-left: auto;
+  //margin-left: auto;
   display: table;
   z-index: 99;
 }

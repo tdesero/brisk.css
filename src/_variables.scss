@@ -10,9 +10,10 @@ $colors: (
   "danger": #f55718,
   "success": #8ac902,
   "warning": #f0ac0e,
-  "gray-1": #999,
-  "gray-2": #666,
-  "gray-3": #333,
+  "gray-1": #DDD,
+  "gray-2": #333,
+  "gray-3": #666,
+  "gray-4": #999,
 );
 
 /* --------------
@@ -42,6 +43,12 @@ $spacers: (
 $text-align: right, center, left;
 $text-transform: uppercase, lowercase, capitalize;
 
+/* display utilities */
+$display-props: none, table, table-cell, inline, inline-block, block, flex;
+
+/* position utilities */
+$position-props: absolute, fixed, relative, static;
+
 /* border */
 $border-color: map-get($colors, "gray-1");
 $border-width: 1px;
@@ -55,15 +62,17 @@ $hover-duration: .5s;
 -------------- */
 $grid-columns: 12;
 $breakpoints: (
-  "sm": 400px,
+  "sm": 600px,
   "md": 800px,
-  "lg": 1200px,
+  "lg": 1200px
 );
 $gutter-width: map-get($spacers, 1);
 
 /* MENU */
+$nav-bar-height: $spacer * 4;
 $menu-toggler-size: 26px;
 $menu-duration: .5s;
+$side-menu-width: 300px;
 
 /* Buttons */
 $button-text-white: map-get($colors, "white");

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "sass --watch ./src/brisk.scss ./dist/brisk.css",
-    "min": "sass --watch ./src/brisk.scss ./dist/brisk.min.css --style=compressed"
+    "min": "sass --watch ./src/brisk.scss ./dist/brisk.min.css --style=compressed",
+    "pug": "pug --watch ./docs/index.pug ./docs/index.html"
   },
   "keywords": [
     "css",
@@ -18,6 +19,10 @@
   "author": "Tom Deser",
   "license": "ISC",
   "devDependencies": {
+    "pug": "^2.0.4",
     "sass": "^1.26.3"
+  },
+  "dependencies": {
+    "pug-cli": "^1.0.0-alpha6"
   }
 }

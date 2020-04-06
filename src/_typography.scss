@@ -8,6 +8,12 @@ html {
   font-family: $font-family-alt;
 }
 
+//add some default margins to all typo-elements
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
 h1, .h1 {
   font-size: 2rem;
 }
@@ -25,5 +31,13 @@ h4, .h4 {
 }
 
 h5, .h5 {
+  font-size: 1rem;
+}
+
+h6, .h6 {
+  font-size: .75rem;
+}
+
+p, a {
   font-size: 1rem;
 }
