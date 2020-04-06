@@ -423,7 +423,7 @@ p, a {
 .row {
   position: relative;
   display: block;
-  display: flex;
+  /*display: flex; should be included. but does not work atm*/
   margin-left: -0.25rem;
   margin-right: -0.25rem;
 }

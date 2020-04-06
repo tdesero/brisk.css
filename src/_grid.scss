@@ -33,7 +33,7 @@
 .row {
   position: relative;
   display: block;
-  display: flex; // if possible
+  /*display: flex; should be included. but does not work atm*/
   margin-left: -$gutter-width / 2;
   margin-right: -$gutter-width / 2;
 
