@@ -41,3 +41,27 @@ h6, .h6 {
 p, a {
   font-size: 1rem;
 }
+
+//Display-sizes
+
+.display-1 {
+  font-size: $display-font-size1;
+}
+.display-2 {
+  font-size: $display-font-size2;
+}
+.display-3 {
+  font-size: $display-font-size3;
+}
+.display-4 {
+  font-size: $display-font-size4;
+}
+.display-5 {
+  font-size: $display-font-size5;
+}
+
+//intro
+
+.intro {
+  font-size: 1.5rem;
+}

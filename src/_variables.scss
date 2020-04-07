@@ -11,51 +11,73 @@ $colors: (
   "success": #8ac902,
   "warning": #f0ac0e,
   "gray-1": #DDD,
-  "gray-2": #333,
+  "gray-2": #999,
   "gray-3": #666,
-  "gray-4": #999,
-);
+  "gray-4": #333,
+) !default;
 
 /* --------------
     Typography
 -------------- */
-$font-base-size: 16px;
-$font-family: sans-serif;
-$font-family-alt: serif;
-$line-height: 1.15;
+$font-base-size: 16px !default;
+$font-family: sans-serif !default;
+$font-family-alt: serif !default;
+$line-height: 1.4 !default;
+$display-font-size1: 5vw;
+$display-font-size2: 4.5vw;
+$display-font-size3: 4vw;
+$display-font-size4: 3.5vw;
+$display-font-size5: 3vw;
 
 /* --------------
     UTILITIES
 -------------- */
 
 /* spacing utilities */
-$spacer: 1rem;
+$spacer: 1rem !default;
 $spacers: (
   0: 0,
   1: $spacer * 0.5,
   2: $spacer * 1,
   3: $spacer * 1.5,
   4: $spacer * 2.5,
-  5: $spacer * 4
-);
+  5: $spacer * 4,
+  10vw: 10vw,
+  20vw: 20vw,
+) !default;
+
+/* heights */
+$heights: (
+  0: 0%,
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%,
+  25vh: 25vh,
+  50vh: 50vh,
+  75vh: 75vh,
+  100vh: 100vh,
+  25vw: 25vw,
+  50vw: 50vw,
+) !default;
 
 /* text utilities */
-$text-align: right, center, left;
-$text-transform: uppercase, lowercase, capitalize;
+$text-align: right, center, left !default;
+$text-transform: uppercase, lowercase, capitalize !default;
 
 /* display utilities */
-$display-props: none, table, table-cell, inline, inline-block, block, flex;
+$display-props: none, table, table-cell, inline, inline-block, block, flex !default;
 
 /* position utilities */
-$position-props: absolute, fixed, relative, static;
+$position-props: absolute, fixed, relative, static !default;
 
 /* border */
-$border-color: map-get($colors, "gray-1");
-$border-width: 1px;
-$border-radius: 0.3rem;
+$border-color: map-get($colors, "gray-1") !default;
+$border-width: 1px !default;
+$border-radius: 0.3rem !default;
 
 /* hover and state effects */
-$hover-duration: .5s;
+$hover-duration: .5s !default;
 
 /* --------------
     GRID
@@ -65,16 +87,16 @@ $breakpoints: (
   "sm": 600px,
   "md": 800px,
   "lg": 1200px
-);
-$gutter-width: map-get($spacers, 1);
+) !default;
+$gutter-width: map-get($spacers, 1) !default;
 
 /* MENU */
-$nav-bar-height: $spacer * 4;
-$menu-toggler-size: 26px;
-$menu-duration: .5s;
-$side-menu-width: 300px;
+$nav-bar-height: $spacer * 4 !default;
+$menu-toggler-size: 26px !default;
+$menu-duration: .5s !default;
+$side-menu-width: 300px !default;
 
 /* Buttons */
-$button-text-white: map-get($colors, "white");
-$button-text-dark: map-get($colors, "dark");
-$button-focus-width: 0.25rem;
+$button-text-white: map-get($colors, "white") !default;
+$button-text-dark: map-get($colors, "dark") !default;
+$button-focus-width: 0.25rem !default;

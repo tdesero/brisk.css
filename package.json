@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "sass --watch ./src/brisk.scss ./dist/brisk.css",
     "min": "sass --watch ./src/brisk.scss ./dist/brisk.min.css --style=compressed",
-    "pug": "pug --watch ./docs/index.pug ./docs/index.html"
+    "docs": "pug --watch ./docs/index.pug ./docs/index.html"
   },
   "keywords": [
     "css",
@@ -19,6 +19,7 @@
   "author": "Tom Deser",
   "license": "ISC",
   "devDependencies": {
+    "jstransformer-highlight": "^2.0.0",
     "pug": "^2.0.4",
     "sass": "^1.26.3"
   },

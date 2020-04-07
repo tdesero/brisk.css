@@ -1,12 +1,15 @@
 /* BRISK:SCSS */
 
 /* Normalize.css makes browsers render all elements more consistently and in line with modern standards. */
-@import 'normalize';
+@import './lib/normalize';
 
+/* CORE START */
 @import 'variables';
 @import 'typography';
+@import 'mixins';
 @import 'grid';
 @import 'utilities';
+/* CORE END */
 
 /* Element Styles */
 @import './elements/buttons';

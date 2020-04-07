@@ -2,10 +2,96 @@ extends layout.pug
 
 block content
   .mt-fixed-menu.py-2.container
-    .row
-      .col-6
-        .bg-light.round.p-3.
-          This will be a documentation.
-      .col-6
-        .bg-light.round.p-3
-          h1.text-uppercase brisk.css is nicer
+      .row
+        .col-8.m-auto.text-center.py-10vw
+          h1.mb-4.display-2.text-uppercase brisk<span class="text-primary">.css</span>
+          p.intro.
+            is honestly just another CSS-Framework. Simple and modern. This site will be a documentation but for now there are just a few hints how to use <b> brisk.css</b>...
+          a(href="https://github.com/tdesero/brisk.css").btn.btn-primary.mr-2.mb-2 Github
+          a(href="https://cdn.jsdelivr.net/gh/tdesero/brisk.css/dist/brisk.css").btn.btn-alt-primary CDN
+          p
+            small.text-gray-2.
+              The CDN should only be used for a quick try-out. The Framework is not finished yet.
+      .row
+        .col-12
+          h4.text-uppercase.my-3 Navigation
+          div(style="z-index: 0").nav-bar.bg-light
+            .menu-container.expand-md.overlay
+              span.h3.logo.float-left logo
+              button.menu-toggler.float-right
+                .menu-icon.menu-style1.menu-icon-primary
+              .menu-content.menu-from-left.bg-white.float-right
+                ul.menu-list
+                  li.menu-item: a Link 1
+                  li.menu-item: a Link 2
+                  li.menu-item: a Link 3
+          pre.bg-light.round.p-2.code
+            code
+              :highlight(lang="html")
+                <div class="nav-bar bg-light">
+                  <div class="menu-container expand-md overlay">
+                    <span class="h3 logo float-left">Logo</span>
+                    <button class="menu-toggler float-right">
+                      <div class="menu-icon menu-style1 menu-icon-primary"></div>
+                    </button>
+                    <div class="menu-content menu-from-left bg-white float-right">
+                      <!-- this is where all the content goes -->
+                      <ul class="menu-list">
+                        <li class="menu-item"><a href="#">Link 1</a></li>
+                        <li class="menu-item"><a href="#">Link 2</a></li>
+                        <li class="menu-item"><a href="#">Link 3</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+          h4.text-uppercase.my-3 Utilitities
+          p Some examples of Utility Classes for margin, padding, border and border-radius(= round). Margin can be used together with breakpoints (like in bootstrap).
+          pre.bg-light.round.p-2.code
+            code
+              :highlight(lang="html")
+                <div class="mb-sm-2 py-3 border-l round">
+                  Vertical Padding 3 and Margin Bottom 2 for breakpoint sm and up
+                </div>
+          h4.text-uppercase.my-3 Buttons
+          button.btn.btn-primary.mr-1.mb-1 .btn.btn-primary
+          button.btn.btn-sm.btn-primary.mr-1 .btn.btn-sm.btn-primary
+          button.btn.btn-lg.btn-primary.mr-1 .btn.btn-lg.btn-primary
+          button.btn.btn-alt-secondary.mr-1 btn-alt-secondary
+          .btn-group.my-2
+            button.btn.btn-primary .btn.btn-primary
+            button.btn.btn-alt-secondary .btn.btn-primary
+            button.btn.btn-alt-secondary .btn.btn-primary
+          p Code Example:
+          pre.bg-light.round.p-2.code
+            code
+              :highlight(lang="html")
+                <div class="btn-group mb-2">
+                  <button class="btn btn-primary">btn-primary</button>
+                  <button class="btn btn-alt-secondary">btn-secondary</button>
+                  <button class="btn btn-alt-secondary">btn-secondary</button>
+                </div>
+          h4.text-uppercase.my-3 Grid
+          p It has 3 Breakpoints (sm 600px, md 800px, lg 1200). Always use a ".row" and put your columns in there.
+          .row.my-2
+            .col-md-6
+              .bg-light.p-2 .col-md-6
+            .col-md-3
+              .bg-light.p-2 .col-md-3
+            .col-md-3
+              .bg-light.p-2 .col-md-3
+          pre.bg-light.round.p-2.code
+            code
+              :highlight(lang="html")
+                <div class="row">
+                  <div class="col-md-6">
+                  <div class="col-md-3">
+                  <div class="col-md-3">
+                </div>
+  script.
+    var togglers = document.querySelectorAll('.menu-toggler');
+    for (var i = 0; i < togglers.length; i++) {
+      togglers[i].onclick = function() {
+        this.parentElement.classList.toggle('open');
+        document.querySelector('body').classList.toggle('menu-open-right')
+      }
+    }

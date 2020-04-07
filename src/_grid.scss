@@ -1,17 +1,3 @@
-@mixin make-col($size, $columns) {
-  width: percentage( $size / $columns );
-  min-height: 1px;
-  max-width: percentage( $size / $columns );
-  float: left;
-  padding-left: $gutter-width / 2;
-  padding-right: $gutter-width / 2;
-  margin-bottom: $gutter-width;
-}
-
-@mixin make-offset($size, $columns) {
-  margin-left: percentage( $size / $columns ) !important;
-}
-
 *, ::after, ::before {
     box-sizing: border-box;
 }
@@ -33,7 +19,8 @@
 .row {
   position: relative;
   display: block;
-  /*display: flex; should be included. but does not work atm*/
+  display: flex;
+  flex-wrap: wrap;
   margin-left: -$gutter-width / 2;
   margin-right: -$gutter-width / 2;
 

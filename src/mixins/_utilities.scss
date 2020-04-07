@@ -1,0 +1,34 @@
+@mixin clearfix() {
+  &::after {
+    content: "";
+    float: none;
+    clear: both;
+    display: table;
+  }
+}
+
+@mixin spacing-utils($prop, $prop-short, $bp-space-name, $space) {
+  .#{$prop-short}-#{$bp-space-name} {
+    #{$prop}: $space !important;
+  }
+  .#{$prop-short}t-#{$bp-space-name} {
+    #{$prop}-top: $space !important;
+  }
+  .#{$prop-short}b-#{$bp-space-name} {
+    #{$prop}-bottom: $space !important;
+  }
+  .#{$prop-short}l-#{$bp-space-name} {
+    #{$prop}-left: $space !important;
+  }
+  .#{$prop-short}r-#{$bp-space-name} {
+    #{$prop}-right: $space !important;
+  }
+  .#{$prop-short}x-#{$bp-space-name} {
+    #{$prop}-left: $space !important;
+    #{$prop}-right: $space !important;
+  }
+  .#{$prop-short}y-#{$bp-space-name} {
+    #{$prop}-top: $space !important;
+    #{$prop}-bottom: $space !important;
+  }
+}
