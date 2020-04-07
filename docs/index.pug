@@ -7,8 +7,8 @@ block content
           h1.mb-4.display-2.text-uppercase brisk<span class="text-primary">.css</span>
           p.intro.
             is honestly just another CSS-Framework. Simple and modern. This site will be a documentation but for now there are just a few hints how to use <b> brisk.css</b>...
-          a(href="https://github.com/tdesero/brisk.css").btn.btn-primary.mr-2.mb-2 Github
-          a(href="https://cdn.jsdelivr.net/gh/tdesero/brisk.css/dist/brisk.css").btn.btn-alt-primary CDN
+          a(href="https://github.com/tdesero/brisk.css").btn.btn-lg.btn-primary.mr-2.mb-2 Github
+          a(href="https://cdn.jsdelivr.net/gh/tdesero/brisk.css/dist/brisk.css").btn.btn-lg.btn-alt-primary CDN
           p
             small.text-gray-2.
               The CDN should only be used for a quick try-out. The Framework is not finished yet.
@@ -45,22 +45,32 @@ block content
                   </div>
                 </div>
           h4.text-uppercase.my-3 Utilitities
-          p Some examples of Utility Classes for margin, padding, border and border-radius(= round). Margin can be used together with breakpoints (like in bootstrap).
+          p Some examples of Utility Classes for margin, padding, border and border-radius(= round). Margin and padding can be used together with breakpoints.
           pre.bg-light.round.p-2.code
             code
               :highlight(lang="html")
                 <div class="mb-sm-2 py-3 border-l round">
                   Vertical Padding 3 and Margin Bottom 2 for breakpoint sm and up
                 </div>
+          p Some hover utilities:
+          button.btn.btn-primary.hover-up.mr-1 .hover-up
+          button.btn.btn-primary.hover-shadow.mr-1 .hover-shadow
           h4.text-uppercase.my-3 Buttons
-          button.btn.btn-primary.mr-1.mb-1 .btn.btn-primary
-          button.btn.btn-sm.btn-primary.mr-1 .btn.btn-sm.btn-primary
-          button.btn.btn-lg.btn-primary.mr-1 .btn.btn-lg.btn-primary
-          button.btn.btn-alt-secondary.mr-1 btn-alt-secondary
-          .btn-group.my-2
-            button.btn.btn-primary .btn.btn-primary
-            button.btn.btn-alt-secondary .btn.btn-primary
-            button.btn.btn-alt-secondary .btn.btn-primary
+          button.btn.btn-primary.mr-1 Primary
+          button.btn.btn-secondary.mr-1 Secondary
+          button.btn.btn-success.mr-1 success
+          button.btn.btn-warning.mr-1 warning
+          button.btn.btn-danger.mr-1 danger
+          br
+          button.btn.btn-alt-primary.mr-1 Primary
+          button.btn.btn-alt-secondary.mr-1 Secondary
+          button.btn.btn-alt-success.mr-1 success
+          button.btn.btn-alt-warning.mr-1 warning
+          button.btn.btn-alt-danger.mr-1 danger
+          .btn-group.mb-1
+            button.btn.btn-primary Group
+            button.btn.btn-alt-secondary Group
+            button.btn.btn-alt-secondary Group
           p Code Example:
           pre.bg-light.round.p-2.code
             code
