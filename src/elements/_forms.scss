@@ -1,0 +1,115 @@
+.form-input, .form-textarea, .form-select {
+  display: block;
+  margin-bottom: $spacer/2;
+  border-radius: $border-radius;
+  border: $border-width solid $border-color;
+  background-color: $white;
+  outline: none;
+  transition: $hover-duration box-shadow;
+  padding: calc(.5em - #{$border-width});
+  &:focus {
+    border: $border-width solid $primary;
+    box-shadow: 0 0 0 $button-focus-width adjust-color($primary, $alpha: -0.5);
+  }
+  &::placeholder {
+    color: $gray-2;
+  }
+}
+
+/* Not working in IE */
+.form-input-light {
+  position: relative;
+  box-sizing: content-box;
+  margin-bottom: $spacer/2;
+
+  input {
+    width: 100%;
+    display: block;
+    background-color: $white;
+    border-radius: 0;
+    padding: .5em 0;
+    border: 0;
+    border-bottom: $border-width solid $border-color;
+    outline: none;
+    &::placeholder {
+      color: $gray-2;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-bottom: $border-width solid $primary;
+    transition: $hover-duration width;
+  }
+  &:focus-within {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.form-group {
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.form-label {
+  display: block;
+  margin: .25em 0;
+}
+
+/* Inspired by https://www.w3schools.com/howto/howto_css_switch.asp */
+.form-switch {
+  position: relative;
+  display: block;
+  padding-left: 2.5rem;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    &:checked + .switch {
+      background-color: $primary;
+    }
+
+    &:focus + .switch {
+      box-shadow: 0 0 0 $button-focus-width adjust-color($primary, $alpha: -0.5)
+    }
+    &:checked + .switch:before {
+      transform: translateX($font-base-size * 0.8);
+    }
+  }
+  .switch {
+    position: absolute;
+    cursor: pointer;
+    top: 0.1em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 1.2rem;
+    background-color: $gray-2;
+    transition: $hover-duration;
+    width: $font-base-size * 2;
+    height: $font-base-size * 1.2;
+    padding: 0.5rem;
+
+    &:before {
+      position: absolute;
+      content: "";
+      height: $font-base-size * 1.2 - $border-width * 2;
+      width: $font-base-size * 1.2 - $border-width * 2;
+      border-radius: $font-base-size/2;
+      left: $border-width;
+      bottom: $border-width;
+      background-color: white;
+      transition: $hover-duration;
+    }
+  }
+}

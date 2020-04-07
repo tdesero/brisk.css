@@ -1,19 +1,33 @@
 /* --------------
     COLORS
 -------------- */
+
+$primary: #27d679 !default;
+$secondary: #4f5a63 !default;
+$white: #FFFFFF !default;
+$dark: #000000 !default;
+$light: #F5F5F5 !default;
+$danger: #f55718 !default;
+$success: #8ac902 !default;
+$warning: #f0ac0e !default;
+$gray-1: #DDD !default;
+$gray-2: #999 !default;
+$gray-3: #666 !default;
+$gray-4: #333 !default;
+
 $colors: (
-  "primary": #27d679,
-  "secondary": #4f5a63,
-  "white": #FFFFFF,
-  "dark": #000000,
-  "light": #F0F0F0,
-  "danger": #f55718,
-  "success": #8ac902,
-  "warning": #f0ac0e,
-  "gray-1": #DDD,
-  "gray-2": #999,
-  "gray-3": #666,
-  "gray-4": #333,
+  "primary": $primary,
+  "secondary": $secondary,
+  "white": $white,
+  "dark": $dark,
+  "light": $light,
+  "danger": $danger,
+  "success": $success,
+  "warning": $warning,
+  "gray-1": $gray-1,
+  "gray-2": $gray-2,
+  "gray-3": $gray-3,
+  "gray-4": $gray-4,
 ) !default;
 
 /* --------------
@@ -61,6 +75,19 @@ $heights: (
   50vw: 50vw,
 ) !default;
 
+/* widths */
+$widths: (
+  0: 0%,
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%,
+  25vw: 25vw,
+  50vw: 50vw,
+  75vw: 75vw,
+  100vw: 100vw,
+) !default;
+
 /* text utilities */
 $text-align: right, center, left !default;
 $text-transform: uppercase, lowercase, capitalize !default;
@@ -99,4 +126,4 @@ $side-menu-width: 300px !default;
 /* Buttons */
 $button-text-white: map-get($colors, "white") !default;
 $button-text-dark: map-get($colors, "dark") !default;
-$button-focus-width: 0.25rem !default;
+$button-focus-width: 0.15rem !default;
