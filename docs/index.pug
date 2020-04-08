@@ -7,7 +7,7 @@ block content
           h1.mb-4.display-2.text-uppercase brisk<span class="text-primary">.css</span>
           p.intro.
             is honestly just another CSS-Framework. Simple and modern. This site will be a documentation but for now there are just a few hints how to use <b> brisk.css</b>...
-          a(href="https://github.com/tdesero/brisk.css").btn.btn-lg.btn-primary.mr-2.mb-2 Github
+          a(href="https://github.com/tdesero/brisk.css").btn.btn-lg.btn-primary.mr-1.mb-2 Github
           a(href="https://cdn.jsdelivr.net/gh/tdesero/brisk.css/dist/brisk.css").btn.btn-lg.btn-alt-primary CDN
           p
             small.text-gray-2.
@@ -22,9 +22,9 @@ block content
                 .menu-icon.menu-style1.menu-icon-primary
               .menu-content.menu-from-left.bg-white.float-right
                 ul.menu-list
-                  li.menu-item: a Link 1
-                  li.menu-item: a Link 2
-                  li.menu-item: a Link 3
+                  li.menu-item: a.menu-link Link 1
+                  li.menu-item: a.menu-link Link 2
+                  li.menu-item: a.menu-link Link 3
           pre.bg-light.round.p-2.code
             code
               :highlight(lang="html")
@@ -43,6 +43,16 @@ block content
                       </ul>
                     </div>
                   </div>
+                </div>
+          p If you want to use a fixed navigation with "position-fixed", use "mt-fixed-menu" for yout content.
+          pre.bg-light.round.p-2.code
+            code
+              :highlight(lang="html")
+                <div class="nav-bar bg-light position-fixed">
+                  <!-- your menu -->
+                </div>
+                <div class="mt-fixed-menu container">
+                  <!-- your content -->
                 </div>
           h4.text-uppercase.my-3 Utilitities
           p Some examples of Utility Classes for margin, padding, border and border-radius(= round). Margin and padding can be used together with breakpoints.
@@ -108,6 +118,46 @@ block content
             label.form-switch
               input(type="checkbox")
               i.switch
+              span toggle me
+          .form-group.w-50
+            label.form-checkbox
+              input(type="checkbox")
+              i.checkbox
+              span check me
+          .form-group.w-50
+            label.form-radio
+              input(type="radio")
+              i.radio
+              span select me
+          pre.bg-light.round.p-2.code
+            code
+              :highlight(lang="html")
+                <div class="form-group">
+                  <label class="form-switch">
+                    <input type="checkbox">
+                    <i class="switch"></i>
+                    <span>Toggle me</span>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label class="form-checkbox">
+                    <input type="checkbox">
+                    <i class="checkbox"></i>
+                    <span>Check me</span>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label class="form-radio mr-2">
+                    <input type="radio" name="radio-test">
+                    <i class="radio"></i>
+                    <span>Select me</span>
+                  </label>
+                  <label class="form-radio">
+                    <input type="radio" name="radio-test">
+                    <i class="radio"></i>
+                    <span>No me</span>
+                  </label>
+                </div>
   script.
     var togglers = document.querySelectorAll('.menu-toggler');
     for (var i = 0; i < togglers.length; i++) {

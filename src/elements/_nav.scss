@@ -18,6 +18,14 @@
   margin-top: $nav-bar-height;
 }
 
+.menu-link {
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+    color: $primary;
+  }
+}
+
 /*-------------------
   Menu Logic
 -------------------*/
@@ -28,14 +36,6 @@
   color: inherit;
   display: table-cell;
   vertical-align: middle;
-
-  a {
-    color: inherit;
-    text-decoration: none;
-    &:hover {
-      color: $primary;
-    }
-  }
 
   .logo {
     line-height: $line-height * 1rem;

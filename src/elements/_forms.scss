@@ -68,19 +68,24 @@
 /* Inspired by https://www.w3schools.com/howto/howto_css_switch.asp */
 .form-switch {
   position: relative;
-  display: block;
+  display: inline-block;
   padding-left: 2.5rem;
+  text-indent: 0;
+  cursor: pointer;
 
   input {
     opacity: 0;
     width: 0;
     height: 0;
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
     &:checked + .switch {
       background-color: $primary;
     }
 
     &:focus + .switch {
-      box-shadow: 0 0 0 $button-focus-width adjust-color($primary, $alpha: -0.5)
+      box-shadow: 0 0 0 $button-focus-width adjust-color($primary, $alpha: -0.75);
     }
     &:checked + .switch:before {
       transform: translateX($font-base-size * 0.8);
@@ -88,7 +93,6 @@
   }
   .switch {
     position: absolute;
-    cursor: pointer;
     top: 0.1em;
     left: 0;
     right: 0;
@@ -109,7 +113,136 @@
       left: $border-width;
       bottom: $border-width;
       background-color: white;
-      transition: $hover-duration;
+      transition: $hover-duration/2;
     }
+  }
+}
+
+/* Inspired by https://www.w3schools.com/howto/howto_css_custom_checkbox.asp */
+.form-checkbox {
+  display: inline-block;
+  position: relative;
+  padding-left: 1.9rem;
+  text-indent: 0;
+  cursor: pointer;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+  }
+
+  .checkbox {
+    position: absolute;
+    top: 0.1rem;
+    left: 0;
+    height: 1.1rem;
+    width: 1.1rem;
+    border-radius: 0.2rem;
+    background-color: $gray-2;
+    transition: $hover-duration/2 box-shadow;
+  }
+  /*
+  &:hover input ~ .checkbox {
+    background-color: $gray-3;
+  }*/
+
+  input:focus ~ .checkbox {
+    box-shadow: 0 0 0 $button-focus-width adjust-color($primary, $alpha: -0.75);
+  }
+
+  input:checked ~ .checkbox {
+    background-color: $primary;
+  }
+
+  input:checked ~ .checkbox:after {
+    display: block;
+  }
+
+  .checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .checkbox:after {
+    left: 0.35rem;
+    top: 0.12rem;
+    width: .37rem;
+    height: .7rem;
+    border: solid white;
+    border-width: 0 0.2rem 0.2rem 0;
+    transform: rotate(45deg);
+  }
+}
+
+/* Inspired by https://www.w3schools.com/howto/howto_css_custom_checkbox.asp */
+.form-radio {
+  display: inline-block;
+  position: relative;
+  padding-left: 1.9rem;
+  text-indent: 0;
+  cursor: pointer;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+  }
+
+  .radio {
+    position: absolute;
+    top: 0.1rem;
+    left: 0;
+    height: 1.1rem;
+    width: 1.1rem;
+    border-radius: 0.55rem;
+    background-color: $gray-2;
+    transition: $hover-duration/2 box-shadow;
+  }
+  /*
+  &:hover input ~ .checkbox {
+    background-color: $gray-3;
+  }*/
+
+  input:focus ~ .radio {
+    box-shadow: 0 0 0 $button-focus-width adjust-color($primary, $alpha: -0.75);
+  }
+
+  input:checked ~ .radio {
+    background-color: $primary;
+  }
+
+  input:checked ~ .radio:after {
+    display: block;
+  }
+
+  .radio:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .radio:after {
+    width: 0.4rem;
+    height: 0.4rem;
+    background-color: $white;
+    border-radius: 0.2rem;
+    margin-left: -0.2rem;
+    margin-top: -0.2rem;
+    top: 50%;
+    left: 50%;
   }
 }
