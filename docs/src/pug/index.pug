@@ -1,0 +1,32 @@
+extends layout.pug
+
+block content
+      .row
+        .col-8.m-auto.text-center.py-10vw
+          h1.mb-4.display-2.text-uppercase brisk<span class="text-primary">.css</span>
+          p.intro.
+            is honestly just another CSS-Framework. Simple and modern. This site will be a documentation but for now there are just a few hints how to use <b> brisk.css</b>...
+          a(href="https://github.com/tdesero/brisk.css" target="blank").btn.btn-lg.btn-primary.mr-1.mb-2 Github
+          a(href="https://cdn.jsdelivr.net/gh/tdesero/brisk.css/dist/brisk.css" target="blank").btn.btn-lg.btn-alt-primary CDN
+          p
+            small.text-gray-2.
+              The CDN should only be used for a quick try-out. The Framework is not finished yet.
+      .row
+        .col-12
+          h5 Check out the features
+      .row
+        .col-sm-4
+          .border.shadow.p-3.round
+            h3 Grid
+            p Design responsive Websites.
+            a(href="grid.html").btn.btn-primary More
+        .col-sm-4
+          .border.shadow.p-3.round
+            h3 Utilities
+            p A lot of options to quickly customize the layout.
+            a(href="utilities.html").btn.btn-primary More
+        .col-sm-4
+          .border.shadow.p-3.round
+            h3 Elements
+            p Readymade navigation, form elements and more...
+            a(href="elements.html").btn.btn-primary More

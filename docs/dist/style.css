@@ -5965,4 +5965,59 @@ p, a {
   background-color: #333;
 }
 
-/*# sourceMappingURL=brisk.css.map */
+h5 {
+  text-transform: uppercase;
+}
+
+.code {
+  white-space: pre-wrap;
+  border-radius: 0.3rem;
+  background-color: #F5F5F5;
+  padding: 1rem;
+  position: relative;
+}
+.code code {
+  background-color: inherit;
+  padding: 0;
+  border-radius: 0;
+  color: #4f5a63;
+}
+.code::after {
+  content: attr(data-lang);
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 0.5rem 1rem;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+code {
+  background-color: #fceece;
+  font-size: 0.9rem;
+  color: #f0ac0e;
+  padding: 0.1em 0.5em;
+  border-radius: 0.3rem;
+}
+
+.hljs-comment {
+  color: #CCC;
+}
+
+.hljs-name {
+  color: #f55718;
+}
+
+.hljs-string {
+  color: #27d679;
+}
+
+.hljs-tag {
+  color: #4f5a63;
+}
+
+.hljs-attr {
+  color: #999;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,125 @@
+extends layout.pug
+
+block content
+  h1.mb-3 Elements
+  h5 Navigation
+  p The Navigation Element is made to work as a Burger Menu and will only be fully visible at some breakpoint if you add the class <code>expand-&lt;breakpoint&gt;</code>. To open the menu add the class <code>open</code> to the <code>menu-container</code>-element.
+  div(style="z-index: 0").nav-bar.bg-light
+    .menu-container.expand-md.overlay
+      span.h3.logo.float-left logo
+      button.menu-toggler.float-right
+        .menu-icon.menu-style1.menu-icon-primary
+      .menu-content.menu-from-left.bg-white.float-right
+        ul.menu-list
+          li.menu-item: a.menu-link Link 1
+          li.menu-item: a.menu-link Link 2
+          li.menu-item: a.menu-link Link 3
+  pre.bg-light.round.p-2.code
+    code
+      :highlight(lang="html")
+        <div class="nav-bar bg-light">
+          <div class="menu-container expand-md overlay">
+            <span class="h3 logo float-left">Logo</span>
+            <button class="menu-toggler float-right">
+              <div class="menu-icon menu-style1 menu-icon-primary"></div>
+            </button>
+            <div class="menu-content menu-from-left bg-white float-right">
+              <!-- this is where all the content goes -->
+              <ul class="menu-list">
+                <li class="menu-item"><a href="#">Link 1</a></li>
+                <li class="menu-item"><a href="#">Link 2</a></li>
+                <li class="menu-item"><a href="#">Link 3</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+  p For the icon there are 3 Styles available.
+    .menu-toggler.display-inline-block.m-5: .menu-icon.menu-style1
+    .menu-toggler.display-inline-block.m-5: .menu-icon.menu-style2
+    .menu-toggler.display-inline-block.m-5: .menu-icon.menu-style3
+  p If you want to use a fixed navigation with "position-fixed", use "mt-fixed-menu" for yout content.
+  pre.bg-light.round.p-2.code
+    code
+      :highlight(lang="html")
+        <div class="nav-bar bg-light position-fixed">
+          <!-- your menu -->
+        </div>
+        <div class="mt-fixed-menu container">
+          <!-- your content -->
+        </div>
+  h5 Buttons
+  button.btn.btn-primary.mr-1 Primary
+  button.btn.btn-secondary.mr-1 Secondary
+  button.btn.btn-success.mr-1 success
+  button.btn.btn-warning.mr-1 warning
+  button.btn.btn-danger.mr-1 danger
+  br
+  button.btn.btn-alt-primary.mr-1 Primary
+  button.btn.btn-alt-secondary.mr-1 Secondary
+  button.btn.btn-alt-success.mr-1 success
+  button.btn.btn-alt-warning.mr-1 warning
+  button.btn.btn-alt-danger.mr-1 danger
+  .btn-group.mb-1
+    button.btn.btn-primary Group
+    button.btn.btn-alt-secondary Group
+    button.btn.btn-alt-secondary Group
+  p Code Example:
+  pre.bg-light.round.p-2.code
+    code
+      :highlight(lang="html")
+        <div class="btn-group mb-2">
+          <button class="btn btn-primary">btn-primary</button>
+          <button class="btn btn-alt-secondary">btn-secondary</button>
+          <button class="btn btn-alt-secondary">btn-secondary</button>
+        </div>
+  h5 Form
+  .form-group.w-50
+    label.form-label Label
+    input.form-input(placeholder="Placeholder")
+  .form-group.form-input-light.w-50
+    label.form-label Label
+    input(placeholder="Placeholder")
+  .form-group.w-50
+    label.form-switch
+      input(type="checkbox")
+      i.switch
+      span toggle me
+  .form-group.w-50
+    label.form-checkbox
+      input(type="checkbox")
+      i.checkbox
+      span check me
+  .form-group.w-50
+    label.form-radio
+      input(type="radio")
+      i.radio
+      span select me
+  pre.bg-light.round.p-2.code
+    code
+      :highlight(lang="html")
+        <div class="form-group">
+          <label class="form-switch">
+            <input type="checkbox">
+            <i class="switch"></i>
+            <span>Toggle me</span>
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="form-checkbox">
+            <input type="checkbox">
+            <i class="checkbox"></i>
+            <span>Check me</span>
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="form-radio mr-2">
+            <input type="radio" name="radio-test">
+            <i class="radio"></i>
+            <span>Select me</span>
+          </label>
+          <label class="form-radio">
+            <input type="radio" name="radio-test">
+            <i class="radio"></i>
+            <span>No me</span>
+          </label>
+        </div>

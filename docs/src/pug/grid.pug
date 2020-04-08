@@ -1,0 +1,32 @@
+extends layout.pug
+
+block content
+  h1.my-3 Grid
+  h5 Columns
+  p The grid has 3 breakpoints (<code>sm</code> 600px, <code>md</code> 800px, <code>lg</code> 1200) and 12 columns. It is designed to work mobile-first. You can set <code>col-&lt;1-12&gt;</code> and overwrite the behaviour with <code>col-&lt;breakpoint&gt;-&lt;1-12&gt;</code>.
+  .row.my-5
+    .col-12.col-sm-6.col-md-4.col-md-2
+      .bg-light.p-2 col-12 col-sm-6 col-md-4 col-md-2
+    .col-12.col-sm-6.col-md-4.col-md-2
+      .bg-light.p-2 col-12 col-sm-6 col-md-4 col-md-2
+    .col-12.col-sm-6.col-md-4.col-md-2
+      .bg-light.p-2 col-12 col-sm-6 col-md-4 col-md-2
+    .col-12.col-sm-6.col-md-4.col-md-2
+      .bg-light.p-2 col-12 col-sm-6 col-md-4 col-md-2
+    .col-12.col-sm-6.col-md-4.col-md-2
+      .bg-light.p-2 col-12 col-sm-6 col-md-4 col-md-2
+    .col-12.col-sm-6.col-md-4.col-md-2
+      .bg-light.p-2 col-12 col-sm-6 col-md-4 col-md-2
+  pre.bg-light.round.p-2.code.mb-5
+    code
+      :highlight(lang="html")
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-4 col-md-2">
+          <div class="col-12 col-sm-6 col-md-4 col-md-2">
+          <div class="col-12 col-sm-6 col-md-4 col-md-2">
+          <div class="col-12 col-sm-6 col-md-4 col-md-2">
+          <div class="col-12 col-sm-6 col-md-4 col-md-2">
+          <div class="col-12 col-sm-6 col-md-4 col-md-2">
+        </div>
+  h5 Offsets
+  p Offsets are applied the same way. For example <code>offset-md-2</code>

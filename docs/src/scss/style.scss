@@ -1,0 +1,58 @@
+@import "../../../src/brisk.scss";
+
+h5 {
+  text-transform: uppercase;
+}
+
+.code {
+  white-space: pre-wrap;
+  border-radius: $border-radius;
+  background-color: $light;
+  padding: $spacer;
+  position: relative;
+
+  code {
+    background-color: inherit;
+    padding: 0;
+    border-radius: 0;
+    color: $secondary;
+  }
+
+  &::after {
+    content: attr(data-lang);
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: $spacer/2 $spacer;
+    font-size: 0.8rem;
+    color: $gray-2;
+  }
+}
+
+code {
+  background-color: lighten($warning, 40%);
+  font-size: 0.9rem;
+  color: $warning;
+  padding: 0.1em 0.5em;
+  border-radius: $border-radius;
+}
+
+.hljs-comment {
+  color: #CCC;
+}
+
+.hljs-name {
+  color: #f55718;
+}
+
+.hljs-string {
+  color: #27d679;
+}
+
+.hljs-tag {
+  color: #4f5a63;
+}
+
+.hljs-attr {
+  color: #999;
+}

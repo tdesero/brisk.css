@@ -1,0 +1,36 @@
+doctype html
+html(lang='en')
+  head
+    meta(title="documentation")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" type="text/css" href="dist/style.css")
+  body
+    .nav-bar.position-fixed.bg-white.border-b
+      .menu-container.overlay
+        .float-left
+          h1.logo.mb-0 
+            a(href="index.html" style="text-decoration: none;").h4.text-dark Brisk.css
+        button.menu-toggler.float-right
+          .menu-icon.menu-style1.menu-icon-primary
+        .menu-content.menu-from-right.float-right.border-l
+          ul.menu-list
+            - 
+              var menu = { 
+                "Grid": "grid.html",
+                "Utilites": "utilities.html",
+                "Elements": "elements.html",
+              }
+            each val, index in menu
+              li.menu-item
+                a(href=val).menu-link #{index}
+    .mt-fixed-menu.py-2.container
+      block content
+      script.
+        var togglers = document.querySelectorAll('.menu-toggler');
+        for (var i = 0; i < togglers.length; i++) {
+          togglers[i].onclick = function() {
+            this.parentElement.classList.toggle('open');
+            document.querySelector('body').classList.toggle('menu-open-right')
+          }
+        }
+    include footer.pug

@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "sass --watch ./src/brisk.scss ./dist/brisk.css",
     "min": "sass --watch ./src/brisk.scss ./dist/brisk.min.css --style=compressed",
-    "docs": "pug --watch ./docs/index.pug ./docs/index.html"
+    "docs-pug": "pug --watch ./docs/src/pug -o ./docs/",
+    "docs-sass": "sass --watch ./docs/src/scss/style.scss ./docs/dist/style.css"
   },
   "keywords": [
     "css",
