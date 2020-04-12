@@ -18,6 +18,7 @@
   outline: 0;
   position: relative;
   cursor: pointer;
+  user-select: none;
 
   //adding a pseudo before element for the focus effect:
   &::before {

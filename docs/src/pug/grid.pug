@@ -5,18 +5,18 @@ block content
   h5 Columns
   p The grid has 3 breakpoints (<code>sm</code> 600px, <code>md</code> 800px, <code>lg</code> 1200) and 12 columns. It is designed to work mobile-first. You can set <code>col-&lt;1-12&gt;</code> and overwrite the behaviour with <code>col-&lt;breakpoint&gt;-&lt;1-12&gt;</code>.
   .row.my-5
+    each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      .col-12.text-center
+        .row
+          div(class=`col-${val}`)
+            .example-light.py-0 #{val}
+  .row.my-5
     .col-12.col-sm-6.col-md-4.col-md-2
-      .bg-light.p-2 col-12 col-sm-6 col-md-4 col-md-2
+      .example-light .col-12.col-sm-6.col-md-4.col-md-2
     .col-12.col-sm-6.col-md-4.col-md-2
-      .bg-light.p-2 col-12 col-sm-6 col-md-4 col-md-2
+      .example-light .col-12.col-sm-6.col-md-4.col-md-2
     .col-12.col-sm-6.col-md-4.col-md-2
-      .bg-light.p-2 col-12 col-sm-6 col-md-4 col-md-2
-    .col-12.col-sm-6.col-md-4.col-md-2
-      .bg-light.p-2 col-12 col-sm-6 col-md-4 col-md-2
-    .col-12.col-sm-6.col-md-4.col-md-2
-      .bg-light.p-2 col-12 col-sm-6 col-md-4 col-md-2
-    .col-12.col-sm-6.col-md-4.col-md-2
-      .bg-light.p-2 col-12 col-sm-6 col-md-4 col-md-2
+      .example-light .col-12.col-sm-6.col-md-4.col-md-2
   pre.bg-light.round.p-2.code.mb-5
     code
       :highlight(lang="html")
@@ -30,3 +30,17 @@ block content
         </div>
   h5 Offsets
   p Offsets are applied the same way. For example <code>offset-md-2</code>
+  .row.my-5
+    .col-6.offset-md-4
+      .example-light .col-6.offset-md-2
+    .col-3
+      .example-light .col-3
+    .col-3.offset-3
+      .example-light .col-3.offset-3
+  h5 Margin-Auto
+  p You can also use auto margin classes for the columns.
+  .row.my-5
+    .col-12
+      .example-light .col-12
+    .col-8.mx-auto
+      .example-light .col-8.mx-auto

@@ -29,6 +29,10 @@
   .bg-#{$name} {
     background-color: $color !important;
   }
+  .color-#{$name} {
+    color: $color !important;
+    background-color: lighten($color, 42%) !important;
+  }
 }
 
 /*--------------

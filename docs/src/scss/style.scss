@@ -1,3 +1,5 @@
+//$primary: #0040ff;
+
 @import "../../../src/brisk.scss";
 
 h5 {
@@ -30,11 +32,26 @@ h5 {
 }
 
 code {
-  background-color: lighten($warning, 40%);
+  background-color: lighten($primary, 42%);
+  //background-color: lighten($warning, 40%);
   font-size: 0.9rem;
-  color: $warning;
+  color: $primary;
+  //color: $warning;
   padding: 0.1em 0.5em;
   border-radius: $border-radius;
+}
+
+.example-light {
+  background-color: lighten($primary, 42%);
+  color: $primary;
+  border-radius: $border-radius;
+  padding: $spacer*2;
+}
+
+.example-frame {
+  border-radius: $border-radius;
+  border: $border-width solid $border-color;
+  padding: $spacer * 2;
 }
 
 .hljs-comment {
@@ -46,7 +63,7 @@ code {
 }
 
 .hljs-string {
-  color: #27d679;
+  color: $primary;
 }
 
 .hljs-tag {

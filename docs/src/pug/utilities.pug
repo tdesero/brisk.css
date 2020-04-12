@@ -5,6 +5,14 @@ block content
   p.mb-4 The Framework has some useful utility classes for margin, padding, height and width as well as things like shadow or even hover effects.
   h5 Margins
   p You can use the margins like <code>m&lt;direction&gt;-&lt;breakpoint&gt;-&lt;value&gt;</code>. Possible directions are l(left), r(right), t(top), b(bottom), x(horizontal), y(vertical). Values from <code>&lt;1-5&gt;</code> for default theme spacings, <code>10vw</code> and <code>20vw</code> for viewport-width and <code>auto</code>. If you put an <code>n</code> before the value like <code>mt-n5</code> the margin will be negative.
+  .example-frame
+    .row.border.round
+      .col-2
+        .example-light.mt-3 mt-3
+      .col-2
+        .example-light.mt-n3 mt-n3
+      .col-2
+        .example-light.ml-2 ml-2
   pre.code(data-lang="html").mb-4
     code
       :highlight(lang="html")
@@ -28,15 +36,15 @@ block content
   p Use <code>text-&lt;color&gt;</code> to color text. Or <code>bg-&lt;color&gt;</code> to color the background of an element.
   .row.mb-5
     .col-4
-      .bg-primary.round.p-2 primary
+      .bg-primary.round.text-white.p-2 primary
     .col-4
       .bg-secondary.round.text-white.p-2 secondary
     .col-4
-      .bg-warning.round.p-2 warning
+      .bg-warning.round.text-white.p-2 warning
     .col-4
-      .bg-danger.round.p-2 danger
+      .bg-danger.round.text-white.p-2 danger
     .col-4
-      .bg-success.round.p-2 success
+      .bg-success.round.text-white.p-2 success
     .col-4
       .bg-dark.round.text-white.p-2 dark
   h5 Shadows

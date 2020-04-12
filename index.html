@@ -67,6 +67,62 @@
             <h3>Headline 3</h3>
             <h4>Headline 4</h4>
             <h5>Headline 5</h5>
+            <h1>Headline
+              <span class="color-primary badge">badge</span>
+              <span class="color-primary badge-sm">badge</span>
+              <span class="color-secondary badge-sm">badge</span>
+              <span class="color-warning badge-sm">badge</span>
+              <span class="color-danger badge-sm">badge</span>
+              <span class="color-success badge-sm">badge</span>
+            </h1>
+
+            <a class="btn btn-primary" href="#my-modal" data-modal-button>Open Modal</a>
+            <div id="my-modal" class="modal-container">
+              <div class="overlay"></div>
+              <div class="modal-content">
+                <span class="float-right modal-close">close</span>
+                <h3>Do this do <span class="text-sm">that</span></h3>
+                <p class="mb-5">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                <div class="text-right">
+                  <a class="btn btn-primary">Okay Cool</a>
+                  <a class="btn">Hm no</a>
+                </div>
+              </div>
+            </div>
+            <a class="btn btn-primary" href="#my-modal2" data-modal-button>Open Modal 2</a>
+            <div id="my-modal2" class="modal-container">
+              <div class="overlay"></div>
+              <div class="modal-content">
+                <span class="float-right modal-close text-lg">&times;</span>
+                <h3>Modal2</h3>
+                <p class="mb-5">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                <div class="text-right">
+                  <a class="btn btn-primary">Okay Cool</a>
+                  <a class="btn btn-alt-primary">Hm no</a>
+                </div>
+              </div>
+            </div>
+            <script>
+              const modalButtons = document.querySelectorAll("[data-modal-button]");
+              for (var i = 0; i < modalButtons.length; i++) {
+                let modal = document.querySelector(modalButtons[i].getAttribute('href'));
+                modal.querySelector('.overlay').onclick = toggle;
+                modal.querySelector('.modal-close').onclick = toggle;
+
+                modalButtons[i].onclick = toggle;
+
+                function toggle(e) {
+                  e.preventDefault();
+                  modal.classList.toggle('open');
+                }
+              }
+              /*
+              document.querySelector('.modal-container .overlay').onclick = function() {
+                this.parentElement.classList.toggle('open');
+              }*/
+            </script>
+
+
             <div class="form-input-light">
               <input placeholder="Placeholder"></input>
             </div>
