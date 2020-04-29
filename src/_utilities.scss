@@ -263,3 +263,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+/*--------------
+  Cursors
+--------------*/
+
+$cursors: default, move, pointer;
+
+@each $type in $cursors {
+  .cursor-#{$type} {
+    cursor: $type !important;
+  }
+}

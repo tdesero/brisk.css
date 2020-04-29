@@ -4,4 +4,18 @@ for (var i = 0; i < togglers.length; i++) {
     this.parentElement.classList.toggle('open');
     document.querySelector('body').classList.toggle('menu-open-right')
   }
+}
+
+const modalButtons = document.querySelectorAll("[data-modal-button]");
+for (var i = 0; i < modalButtons.length; i++) {
+  let modal = document.querySelector(modalButtons[i].getAttribute('href'));
+  modal.querySelector('.overlay').onclick = toggle;
+  modal.querySelector('.modal-close').onclick = toggle;
+
+  modalButtons[i].onclick = toggle;
+
+  function toggle(e) {
+    e.preventDefault();
+    modal.classList.toggle('open');
+  }
 }</script></div><div class="container"><footer class="my-5"><p>Made with &hearts; by tdesero 2020</p></footer></div></body></html>

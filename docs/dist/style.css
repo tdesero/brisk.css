@@ -365,7 +365,7 @@ template {
 html {
   font-size: 16px;
   font-family: sans-serif;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .font-alt {
@@ -4890,6 +4890,21 @@ p, a {
   transform: translate(-50%, -50%);
 }
 
+/*--------------
+  Cursors
+--------------*/
+.cursor-default {
+  cursor: default !important;
+}
+
+.cursor-move {
+  cursor: move !important;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
 /* CORE END */
 /* Element Styles */
 .btn, .btn-sm, .btn-lg {
@@ -5600,7 +5615,7 @@ p, a {
   vertical-align: middle;
 }
 .menu-container .logo {
-  line-height: 1.4rem;
+  line-height: 1.5rem;
 }
 .menu-container.overlay::before {
   content: "";
@@ -5840,7 +5855,7 @@ p, a {
 -------------------*/
 .menu-toggler {
   position: relative;
-  height: 1.4rem;
+  height: 1.5rem;
   width: 26px;
   padding: 0;
   cursor: pointer;

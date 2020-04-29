@@ -1,8 +1,8 @@
 extends layout.pug
 
 block content
-  h1.mb-3 Elements
-  h5 Navigation
+  h1 Elements
+  h5.mt-5 Navigation
   p The Navigation Element is made to work as a Burger Menu and will only be fully visible at some breakpoint if you add the class <code>expand-&lt;breakpoint&gt;</code>. To open the menu add the class <code>open</code> to the <code>menu-container</code>-element.
   .example-frame.mb-3
     div(style="z-index: 1").nav-bar.bg-light
@@ -49,7 +49,7 @@ block content
         <div class="mt-fixed-menu container">
           <!-- your content -->
         </div>
-  h5 Buttons
+  h5.mt-5 Buttons
   .example-frame.mb-3
     button.btn.btn-primary.mr-1 Primary
     button.btn.btn-secondary.mr-1 Secondary
@@ -75,7 +75,7 @@ block content
           <button class="btn btn-alt-secondary">btn-secondary</button>
           <button class="btn btn-alt-secondary">btn-secondary</button>
         </div>
-  h5 Form
+  h5.mt-5 Form
   .example-frame.mb-3
     .form-group.w-50
       label.form-label Label
@@ -127,9 +127,41 @@ block content
             <span>No me</span>
           </label>
         </div>
-  h5 Badges
+  h5.mt-5 Badges
   h1 Headline 
     span.color-primary.badge-sm small Badge
     span.color-secondary.badge-sm.ml-1 small Badge
   p Text 
     span.color-primary.badge Badge
+  h5.mt-5 Modals
+  p To open a modal you need to add <code>.open</code> to the <code>.modal-container</code> element.
+  a.btn.btn-primary(href='#my-modal' data-modal-button='') Open Modal
+  #my-modal.modal-container
+    .overlay
+    .modal-content
+      span.float-right.modal-close close
+      h3
+        | Modal Title
+      p.mb-5
+        | Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      .text-right
+        a.btn.btn-alt-primary.mr-1 No
+        a.btn.btn-primary Okay
+  pre.bg-light.round.p-2.code
+    code
+      :highlight(lang="html")
+        <a class="btn btn-primary" href="#my-modal" data-modal-button>Open Modal</a>
+        <div id="my-modal" class="modal-container">
+          <div class="overlay"></div>
+          <div class="modal-content">
+            <span class="float-right modal-close">close</span>
+            <h3>Modal Title</h3>
+            <p class="mb-5">
+            ...
+            </p>
+            <div class="text-right">
+              <a class="btn btn-alt-primary mr-1">No</a>
+              <a class="btn btn-primary">Okay</a>
+            </div>
+          </div>
+        </div>
