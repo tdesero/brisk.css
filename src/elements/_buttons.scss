@@ -19,6 +19,7 @@
   position: relative;
   cursor: pointer;
   user-select: none;
+  line-height: $line-height * 1.0rem;
 
   //adding a pseudo before element for the focus effect:
   &::before {
@@ -32,6 +33,34 @@
     opacity: 0.25;
     transition: .25s box-shadow;
   }
+
+  /* loading */
+  &.loading {
+    color: transparent!important;
+    min-height: .8rem;
+    pointer-events: none;
+    position: relative;
+    &::after {
+      /* find spin animation at the end of this file */
+      animation: spin .5s infinite linear;
+      border-radius: 50%;
+      content: "";
+      display: block;
+      height: .8rem;
+      left: 50%;
+      margin-left: -.4rem;
+      margin-top: -.4rem;
+      position: absolute;
+      top: 50%;
+      width: .8rem;
+      z-index: 1;
+    }
+  }
+}
+
+.btn-xl {
+  @extend .btn;
+  font-size: 1.5rem;
 }
 
 .btn-lg {
@@ -60,6 +89,15 @@
         box-shadow: 0 0 0 $button-focus-width $color;
       }
     }
+
+    /* Loading */
+    &.loading {
+      &::after {
+        border: $border-width*2 solid set-button-text-color($color);
+        border-right-color: transparent;
+        border-top-color: transparent;
+      }
+    }
   }
 
   .btn-alt-#{$name} {
@@ -80,6 +118,15 @@
         box-shadow: 0 0 0 calc(#{$button-focus-width} + #{$border-width}) $color;
       }
     }
+
+    /* Loading */
+    &.loading {
+      &::after {
+        border: $border-width*2 solid $color;
+        border-right-color: transparent;
+        border-top-color: transparent;
+      }
+    }
   }
 }
 
@@ -97,4 +144,27 @@
     border-radius: 0 $border-radius $border-radius 0;
   }
   @include clearfix;
+}
+
+
+/* Square & Circle Button */
+.btn-square {
+  width: calc(#{$line-height * 1em} + #{$spacer});
+  height: calc(#{$line-height * 1em} + #{$spacer});
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.btn-circle {
+  @extend .btn-square;
+  border-radius: 50%;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -1,7 +1,7 @@
 extends layout.pug
 
 block content
-  h1 Elements
+  h1.mt-3 Elements
   h5.mt-5 Navigation
   p The Navigation Element is made to work as a Burger Menu and will only be fully visible at some breakpoint if you add the class <code>expand-&lt;breakpoint&gt;</code>. To open the menu add the class <code>open</code> to the <code>menu-container</code>-element.
   .example-frame.mb-3
@@ -15,7 +15,7 @@ block content
             li.menu-item: a.menu-link Link 1
             li.menu-item: a.menu-link Link 2
             li.menu-item: a.menu-link Link 3
-  pre.bg-light.round.p-2.code
+  pre.code(data-lang="html")
     code
       :highlight(lang="html")
         <div class="nav-bar bg-light">
@@ -40,7 +40,7 @@ block content
     button(style="z-index: 0").menu-toggler.display-inline-block.m-3: .menu-icon.menu-style2
     button(style="z-index: 0").menu-toggler.display-inline-block.m-3: .menu-icon.menu-style3
   p If you want to use a fixed navigation with "position-fixed", use "mt-fixed-menu" for yout content.
-  pre.bg-light.round.p-2.code
+  pre.code(data-lang="html")
     code
       :highlight(lang="html")
         <div class="nav-bar bg-light position-fixed">
@@ -53,28 +53,55 @@ block content
   .example-frame.mb-3
     button.btn.btn-primary.mr-1 Primary
     button.btn.btn-secondary.mr-1 Secondary
-    button.btn.btn-success.mr-1 success
-    button.btn.btn-warning.mr-1 warning
-    button.btn.btn-danger.mr-1 danger
+    button.btn.btn-success.mr-1 Success
+    button.btn.btn-warning.mr-1 Warning
+    button.btn.btn-danger.mr-1 Danger
     br
     button.btn.btn-alt-primary.mr-1 Primary
     button.btn.btn-alt-secondary.mr-1 Secondary
-    button.btn.btn-alt-success.mr-1 success
-    button.btn.btn-alt-warning.mr-1 warning
-    button.btn.btn-alt-danger.mr-1 danger
+    button.btn.btn-alt-success.mr-1 Success
+    button.btn.btn-alt-warning.mr-1 Warning
+    button.btn.btn-alt-danger.mr-1 Danger
     .btn-group.mb-1
       button.btn.btn-primary Group
       button.btn.btn-alt-secondary Group
       button.btn.btn-alt-secondary Group
+    button.btn.btn-primary.btn-xl.mr-1 Button Extra Large
+    button.btn.btn-primary.btn-lg.mr-1 Button Large
+    button.btn.btn-primary.mr-1 Button Normal
+    button.btn.btn-primary.btn-sm.mr-1 Button Small
+    br
+    button.btn.btn-primary.btn-circle.btn-sm.mr-1 A
+    button.btn.btn-primary.btn-circle.mr-1 A
+    button.btn.btn-primary.btn-circle.btn-lg.mr-1 A
+    button.btn.btn-primary.btn-circle.btn-xl A
+    br
+    button.btn.btn-primary.btn-square.btn-sm.mr-1 A
+    button.btn.btn-primary.btn-square.mr-1 A
+    button.btn.btn-primary.btn-square.btn-lg.mr-1 A
+    button.btn.btn-primary.btn-square.btn-xl A
   p Code Example:
-  pre.bg-light.round.p-2.code
+  pre.code(data-lang="html")
     code
       :highlight(lang="html")
+        <!-- regular primary button -->
+        <button class="btn btn-primary">button</button>
+        <!-- alternative (outline) primary button -->
+        <button class="btn btn-alt-primary">Button</button>
+        <!-- button sizes -->
+        <button class="btn btn-primary btn-xl">button</button>
+        <button class="btn btn-primary btn-lg">button</button>
+        <button class="btn btn-primary">button</button>
+        <button class="btn btn-primary btn-sm">button</button>
+        <!-- example of a button group -->
         <div class="btn-group mb-2">
-          <button class="btn btn-primary">btn-primary</button>
-          <button class="btn btn-alt-secondary">btn-secondary</button>
-          <button class="btn btn-alt-secondary">btn-secondary</button>
+          <button class="btn btn-primary">Button</button>
+          <button class="btn btn-alt-secondary">Button</button>
+          <button class="btn btn-alt-secondary">Button</button>
         </div>
+        <!-- square or circle buttons (works with size options) -->
+        <button class="btn btn-primary btn-square btn-lg">A</button>
+        <button class="btn btn-primary btn-circle btn-sm">A</button>
   h5.mt-5 Form
   .example-frame.mb-3
     .form-group.w-50
@@ -98,7 +125,7 @@ block content
         input(type="radio")
         i.radio
         span select me
-  pre.bg-light.round.p-2.code
+  pre.code(data-lang="html")
     code
       :highlight(lang="html")
         <div class="form-group">
@@ -147,7 +174,7 @@ block content
       .text-right
         a.btn.btn-alt-primary.mr-1 No
         a.btn.btn-primary Okay
-  pre.bg-light.round.p-2.code
+  pre.code(data-lang="html")
     code
       :highlight(lang="html")
         <a class="btn btn-primary" href="#my-modal" data-modal-button>Open Modal</a>
@@ -165,3 +192,19 @@ block content
             </div>
           </div>
         </div>
+  h5.mt-5 List groups
+  p Style elements as list groups with <code>.list-group</code> for the wrapper element and <code>.list-group-item</code> for item elements. To add rounded corners you can add utility-classes like <code>round</code> to the wrapper element. If the element is <code>a</code> oder <code>button</code> there will be a hover effect.
+  .list-group.round.my-3
+    a.list-group-item(href='#') Item
+    a.list-group-item.active(href='#') Active Item
+    a.list-group-item(href='#') Item
+    a.list-group-item(href='#') Item
+  pre.code(data-lang="html")
+    code
+      :highlight(lang="html")
+        <div class="list-group round my-3">
+            <a href="#" class="list-group-item">Item</a>
+            <a href="#" class="list-group-item active">Active Item</a>
+            <a href="#" class="list-group-item">Item</a>
+            <a href="#" class="list-group-item">Item</a>
+          </div>

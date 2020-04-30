@@ -1,0 +1,29 @@
+.list-group {
+    border: $border-width solid $border-color;
+    list-style: none;
+    margin-left: 0;
+}
+
+.list-group-item {
+    margin: 0;
+    padding: $spacer;
+    border-bottom: $border-width solid $border-color;
+    display: block;
+    text-decoration: none;
+    color: $dark;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    &.active {
+        @extend .color-primary;
+    }
+}
+
+/* if it is 'a' or 'button' element there should be a hover effect */
+a.list-group-item, button.list-group-item {
+    &:hover {
+        background-color: mix($primary, $white, 5%) !important;
+    }
+}

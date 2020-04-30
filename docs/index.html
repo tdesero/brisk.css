@@ -6,16 +6,28 @@ for (var i = 0; i < togglers.length; i++) {
   }
 }
 
-const modalButtons = document.querySelectorAll("[data-modal-button]");
+function onClick(el, func, arg) {
+  el.addEventListener('click', function (event) {
+
+    func(event, arg);
+  })
+}
+
+var modalButtons = document.querySelectorAll("[data-modal-button]");
+var modals = [];
 for (var i = 0; i < modalButtons.length; i++) {
-  let modal = document.querySelector(modalButtons[i].getAttribute('href'));
-  modal.querySelector('.overlay').onclick = toggle;
-  modal.querySelector('.modal-close').onclick = toggle;
+  modals[i] = document.querySelector(modalButtons[i].getAttribute('href'));
+  onClick(modals[i].querySelector('.overlay'), toggle, i);
+  onClick(modals[i].querySelector('.modal-close'), toggle, i);
+  onClick(modalButtons[i], toggle, i);
+  //modals[i].querySelector('.overlay').onclick = toggle(i);
+  //modals[i].querySelector('.modal-close').onclick = toggle(i);
 
-  modalButtons[i].onclick = toggle;
+  //modalButtons[i].onclick = toggle;
 
-  function toggle(e) {
+  function toggle(e, i) {
+    console.log(e)
     e.preventDefault();
-    modal.classList.toggle('open');
+    modals[i].classList.toggle('open');
   }
 }</script></div><div class="container"><footer class="my-5"><p>Made with &hearts; by tdesero 2020</p></footer></div></body></html>

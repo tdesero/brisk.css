@@ -42,6 +42,25 @@ p, a {
   font-size: 1rem;
 }
 
+ul {
+  padding: 0;
+  margin: $spacer 0 $spacer $spacer;
+  list-style: disc inside;
+  li {
+    margin-bottom: $spacer/2;
+  }
+  ul {
+    list-style-type: circle;
+  }
+}
+
+blockquote {
+  border-left: .15rem solid $border-color;
+  margin-left: 0;
+  margin-right: 0;
+  padding: $spacer $spacer*2;
+}
+
 //Display-sizes
 
 .display-1 {
