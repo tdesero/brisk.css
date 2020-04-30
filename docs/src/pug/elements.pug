@@ -80,6 +80,9 @@ block content
     button.btn.btn-primary.btn-square.mr-1 A
     button.btn.btn-primary.btn-square.btn-lg.mr-1 A
     button.btn.btn-primary.btn-square.btn-xl A
+    br
+    button.btn.btn-primary.loading.mr-1 Loading
+    button.btn.btn-alt-secondary.loading Loading
   p Code Example:
   pre.code(data-lang="html")
     code
@@ -102,6 +105,8 @@ block content
         <!-- square or circle buttons (works with size options) -->
         <button class="btn btn-primary btn-square btn-lg">A</button>
         <button class="btn btn-primary btn-circle btn-sm">A</button>
+        <!-- loading -->
+        <button class="btn btn-primary loading">Button</button>
   h5.mt-5 Form
   .example-frame.mb-3
     .form-group.w-50
@@ -193,7 +198,7 @@ block content
           </div>
         </div>
   h5.mt-5 List groups
-  p Style elements as list groups with <code>.list-group</code> for the wrapper element and <code>.list-group-item</code> for item elements. To add rounded corners you can add utility-classes like <code>round</code> to the wrapper element. If the element is <code>a</code> oder <code>button</code> there will be a hover effect.
+  p Style elements as list groups with <code>.list-group</code> for the wrapper element and <code>.list-group-item</code> for item elements. To add rounded corners you can add utility-classes like <code>round</code> to the wrapper element. If the element is <code>a</code> or <code>button</code> there will be a hover effect.
   .list-group.round.my-3
     a.list-group-item(href='#') Item
     a.list-group-item.active(href='#') Active Item
@@ -208,3 +213,22 @@ block content
             <a href="#" class="list-group-item">Item</a>
             <a href="#" class="list-group-item">Item</a>
           </div>
+  h5.mt-5 Dropdowns
+  p To open the dropdown simply add <code>.open</code>-class to the <code>.dropdown</code>-wrapper element.
+  .dropdown
+    button.btn.btn-primary.dropdown-btn Dropdown
+    .dropdown-list
+      a.dropdown-list-item(href='#') Link 1
+      a.dropdown-list-item(href='#') Link 2
+      a.dropdown-list-item(href='#') Link 3
+  pre.code(data-lang="html")
+    code
+      :highlight(lang="html")
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-btn">Dropdown</button>
+          <div class="dropdown-list">
+            <a class="dropdown-list-item" href="#">Link 1</a>
+            <a class="dropdown-list-item" href="#">Link 2</a>
+            <a class="dropdown-list-item" href="#">Link 3</a>
+          </div>
+        </div>

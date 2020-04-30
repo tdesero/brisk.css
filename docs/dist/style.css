@@ -4857,7 +4857,7 @@ blockquote {
 /*--------------
   Shadows
 --------------*/
-.shadow, .hover-shadow {
+.shadow, .dropdown-list, .hover-shadow {
   box-shadow: 0 0.25rem 0.75rem -0.25rem rgba(0, 0, 0, 0.3);
 }
 
@@ -4980,8 +4980,8 @@ blockquote {
   position: relative;
 }
 .btn.loading::after, .loading.btn-sm::after, .loading.btn-lg::after, .loading.btn-xl::after {
-  /* find spin animation at the end of this file */
-  animation: spin 0.5s infinite linear;
+  /* find animation at the end of this file */
+  animation: loading 0.5s infinite linear;
   border-radius: 50%;
   content: "";
   display: block;
@@ -5566,7 +5566,7 @@ blockquote {
   border-radius: 50%;
 }
 
-@keyframes spin {
+@keyframes loading {
   0% {
     transform: rotate(0deg);
   }
@@ -5740,7 +5740,7 @@ blockquote {
   width: 0.37rem;
   height: 0.7rem;
   border: solid white;
-  border-width: 0 0.2rem 0.2rem 0;
+  border-width: 0 0.12rem 0.12rem 0;
   transform: rotate(45deg);
 }
 
@@ -6376,6 +6376,73 @@ a.list-group-item:hover, button.list-group-item:hover {
   background-color: #f5f5fd !important;
 }
 
+.dropdown {
+  position: relative;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.dropdown-list {
+  display: none;
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem;
+  z-index: 1;
+  background-color: #FFFFFF;
+  top: 100%;
+  border-radius: 0.3rem;
+  border: 1px solid #DDD;
+  min-width: 100%;
+  animation: 0.3s dropdown;
+}
+
+.dropdown-list-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  color: currentColor;
+}
+.dropdown-list-item:hover {
+  color: #363bd2;
+  background-color: #f5f5fd !important;
+}
+
+.dropdown-btn {
+  margin: 0;
+}
+.dropdown-btn::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.5em;
+  margin-bottom: 0.25em;
+  height: 0.5em;
+  width: 0.5em;
+  border: 0.1em solid currentColor;
+  border-top: 0;
+  border-left: 0;
+  transform: rotate(45deg);
+  transition: 0.3s transform;
+}
+
+/* open logic */
+.open .dropdown-list {
+  display: block;
+}
+.open .dropdown-btn::after {
+  transform: translateY(0.25em) rotate(225deg);
+}
+
+@keyframes dropdown {
+  0% {
+    transform: translateY(-2rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 h5 {
   text-transform: uppercase;
 }
