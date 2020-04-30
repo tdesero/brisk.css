@@ -38,8 +38,13 @@ h6, .h6 {
   font-size: .75rem;
 }
 
-p, a {
+p {
   font-size: 1rem;
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
 }
 
 ul {

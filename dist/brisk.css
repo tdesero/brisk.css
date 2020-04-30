@@ -401,8 +401,13 @@ h6, .h6 {
   font-size: 0.75rem;
 }
 
-p, a {
+p {
   font-size: 1rem;
+}
+
+a {
+  color: #363bd2;
+  text-decoration: none;
 }
 
 ul {
