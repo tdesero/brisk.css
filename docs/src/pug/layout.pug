@@ -6,7 +6,8 @@ html(lang='en')
     link(rel="stylesheet" type="text/css" href="dist/style.css")
   body
     .nav-bar.position-fixed.bg-white.border-b
-      .menu-container.overlay
+      .menu-container
+        .overlay
         .float-left
           h1.logo.mb-0 
             a(href="index.html" style="text-decoration: none;").h4.text-dark Brisk.css
@@ -26,13 +27,17 @@ html(lang='en')
     .mt-fixed-menu.py-2.container
       block content
       script.
-        var togglers = document.querySelectorAll('.menu-toggler');
-        for (var i = 0; i < togglers.length; i++) {
-          togglers[i].onclick = function() {
-            this.parentElement.classList.toggle('open');
-            document.querySelector('body').classList.toggle('menu-open-right')
+
+        function addToggle(selector) {
+          var togglers = document.querySelectorAll(selector);
+          for (var i = 0; i < togglers.length; i++) {
+            togglers[i].onclick = function() {
+              this.parentElement.classList.toggle('open');
+            }
           }
         }
+        addToggle('.menu-toggler');
+        addToggle('.menu-container .overlay');
 
         function onClick(el, func, arg) {
           el.addEventListener('click', function (event) {

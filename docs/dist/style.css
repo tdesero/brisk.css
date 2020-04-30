@@ -5844,12 +5844,13 @@ blockquote {
   color: inherit;
   display: table-cell;
   vertical-align: middle;
+  position: relative;
 }
 .menu-container .logo {
   line-height: 1.5rem;
 }
-.menu-container.overlay::before {
-  content: "";
+.menu-container .overlay {
+  /*content: "";*/
   z-index: -1;
   background-color: #000;
   opacity: 0;
@@ -5858,8 +5859,8 @@ blockquote {
 .menu-container.open .menu-content {
   transform: none;
 }
-.menu-container.open.overlay::before {
-  content: "";
+.menu-container.open .overlay {
+  /*content: "";*/
   position: fixed;
   left: 0;
   top: 0;
@@ -5885,6 +5886,8 @@ blockquote {
   top: 0;
   right: 0;
   left: unset;
+  left: auto;
+  /* for IE */
   width: 300px;
   transform: translateX(100%);
   height: 100vh;
