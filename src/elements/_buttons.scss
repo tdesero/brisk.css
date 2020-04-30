@@ -41,8 +41,8 @@
     pointer-events: none;
     position: relative;
     &::after {
-      /* find spin animation at the end of this file */
-      animation: spin .5s infinite linear;
+      /* find animation at the end of this file */
+      animation: loading .5s infinite linear;
       border-radius: 50%;
       content: "";
       display: block;
@@ -160,7 +160,7 @@
   border-radius: 50%;
 }
 
-@keyframes spin {
+@keyframes loading {
   0% {
     transform: rotate(0deg);
   }

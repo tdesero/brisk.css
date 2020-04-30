@@ -63,6 +63,22 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-btn">Dropdown</button>
+              <div class="dropdown-list">
+                <a class="dropdown-list-item" href="#">Link 1</a>
+                <a class="dropdown-list-item" href="#">Link 2</a>
+                <a class="dropdown-list-item" href="#">Link 3</a>
+              </div>
+            </div>
+            <div class="dropdown open">
+              <button class="btn btn-primary dropdown-btn">Dropdown</button>
+              <div class="dropdown-list">
+                <a class="dropdown-list-item" href="#">Link 1</a>
+                <a class="dropdown-list-item" href="#">Link 2</a>
+                <a class="dropdown-list-item" href="#">Link 3</a>
+              </div>
+            </div>
             <h1>Headline 1</h1>
             <h2>Headline 2</h2>
             <h3>Headline 3</h3>
@@ -268,20 +284,17 @@
   </code>
 
   <script>
-  var togglers = document.querySelectorAll('.menu-toggler');
-  for (var i = 0; i < togglers.length; i++) {
-    togglers[i].onclick = function() {
-      this.parentElement.classList.toggle('open');
-      document.querySelector('body').classList.toggle('menu-open-right')
+  function addToggle(selector) {
+    var togglers = document.querySelectorAll(selector);
+    for (var i = 0; i < togglers.length; i++) {
+      togglers[i].onclick = function() {
+        this.parentElement.classList.toggle('open');
+      }
     }
   }
-
-  var menuOverlays = document.querySelectorAll('.menu-container .overlay');
-  for (var i = 0; i < menuOverlays.length; i++) {
-    menuOverlays[i].onclick = function() {
-      this.parentElement.classList.toggle('open');
-    }
-  }
+  addToggle('.menu-toggler');
+  addToggle('.menu-container .overlay');
+  addToggle('.dropdown .dropdown-btn');
 
   var menuItems = document.querySelectorAll('li.has-sublist>a');
   console.log(menuItems)
