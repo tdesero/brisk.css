@@ -4924,10 +4924,22 @@ blockquote {
 }
 
 .absolute-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.absolute-vertical-center {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translate(0, -50%) !important;
+}
+
+.absolute-horizontal-center {
+  position: absolute !important;
+  left: 50% !important;
+  transform: translate(-50%, 0) !important;
 }
 
 /*--------------
@@ -4943,6 +4955,13 @@ blockquote {
 
 .cursor-pointer {
   cursor: pointer !important;
+}
+
+/*--------------
+  Overflow
+--------------*/
+.overflow-hidden {
+  overflow: hidden !important;
 }
 
 /* CORE END */
@@ -6414,7 +6433,7 @@ a.list-group-item:hover, button.list-group-item:hover {
 .dropdown-btn::after {
   content: "";
   display: inline-block;
-  margin-left: 0.5em;
+  margin-left: 0.75em;
   margin-bottom: 0.25em;
   height: 0.5em;
   width: 0.5em;
@@ -6442,6 +6461,52 @@ a.list-group-item:hover, button.list-group-item:hover {
     transform: translateY(0);
     opacity: 1;
   }
+}
+.avatar {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  height: 3.5rem;
+  width: 3.5rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  background-color: #363bd2;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+}
+.avatar::before {
+  content: attr(data-initials);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 50%;
+}
+
+.notification {
+  height: 1.3rem;
+  min-width: 1.3rem;
+  color: #FFFFFF;
+  background-color: #f55718;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0 0.2em;
+  font-size: 0.6rem;
+  border-radius: 0.65rem;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  z-index: 1;
 }
 
 /*# sourceMappingURL=brisk.css.map */
