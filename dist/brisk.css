@@ -5906,13 +5906,14 @@ b, strong {
   display: table-cell;
   vertical-align: middle;
   background-color: inherit;
+  position: relative;
 }
 
 .menu-container {
   /*background-color: inherit;*/
   color: inherit;
   vertical-align: middle;
-  position: static !important;
+  /*position: static !important;*/
 }
 .menu-container .logo {
   line-height: 1.5rem;
@@ -5939,8 +5940,8 @@ b, strong {
 
 .menu-content {
   z-index: -1;
-  position: absolute;
-  top: 100%;
+  margin-top: 1rem;
+  position: fixed;
   left: 0;
   width: 100%;
   padding: 1rem;
@@ -5952,6 +5953,7 @@ b, strong {
 .menu-content.menu-from-right, .menu-content.menu-from-left {
   position: fixed;
   z-index: 1;
+  margin-top: 0;
   top: 0;
   right: 0;
   left: unset;

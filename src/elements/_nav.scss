@@ -35,13 +35,14 @@
   display: table-cell;
   vertical-align: middle;
   background-color: inherit;
+  position: relative;
 }
 
 .menu-container {
   /*background-color: inherit;*/
   color: inherit;
   vertical-align: middle;
-  position: static !important;
+  /*position: static !important;*/
 
   .logo {
     line-height: $line-height * 1rem;
@@ -75,15 +76,13 @@
 
 .menu-content {
   z-index: -1;
-  position: absolute;
-  top: 100%;
+  margin-top: map-get($spacers, 2);
+  position: fixed;
   left: 0;
   width: 100%;
-  //display: none;
   padding: map-get($spacers, 2);
   transform: translateY(-100%);
   transition: $menu-duration transform;
-  //animation: $menu-duration menuAnimationFromTop;
   background-color: $white;
   text-align: left;
 
@@ -91,6 +90,7 @@
   &.menu-from-right {
     position: fixed;
     z-index: 1;
+    margin-top: 0;
     top: 0;
     right: 0;
     left: unset;
@@ -137,7 +137,6 @@
     margin: 0;
     width: auto;
     height: auto;
-    //margin-left: auto;
     padding: 0;
     z-index: 1;
     transform: none;
