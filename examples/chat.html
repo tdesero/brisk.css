@@ -26,7 +26,7 @@
         }
         .message-left p, .message-right p {
             font-size: 0.9rem;
-            letter-spacing: 0.025em;
+            letter-spacing: 0.02em;
         }
 
         .message-right {
@@ -39,6 +39,16 @@
             position: absolute;
             background-color: #FFF;
             top: 0;
+        }
+        .message-left::before, .message-right::before {
+            content: attr(data-time);
+            position: absolute;
+            font-size: 0.75rem;
+            right: 0;
+            bottom: 0;
+            margin: 1em;
+            line-height: 1;
+            color: #CCC;
         }
         .message-left::after {
             left: -0.3rem;
@@ -54,23 +64,35 @@
         .chat-main {
             height: calc(100% - 5.5rem);
         }
+        .chat-user-list {
+            overflow: auto;
+            height: calc(100% - 155px);
+        }
+        .chat-user-list::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+            background-color: transparent;
+        }
+        .chat-user-list::-webkit-scrollbar-thumb {
+            background-color: #DDD;
+        }
     </style>
 </head>
 <body class="bg-primary">
     <div class="container p-0 p-md-2">
         <div class="row bg-white m-0 h-100 shadow-lg round overflow-hidden">
-            <div class="col-sm-4 col-6 border-r">
+            <div class="col-sm-4 col-6 border-r h-100">
                 <div class="bg-light p-2 position-relative">
                     <figure class="avatar mr-2" data-initials="AB">
                         <img src="https://source.unsplash.com/B4TjXnI0Y2c/100x100">
                     </figure>
-                    <span class="text-lg absolute-vertical-center">Your Name</span>
+                    <span class="text-lg absolute-y-center">Your Name</span>
                 </div>
                 <div class="bg-light p-2 border-b">
                     <input class="form-input w-100 m-0" type="text" placeholder="Search">
                 </div>
                 
-                <div class="list-group border-0">
+                <div class="list-group border-0 chat-user-list">
                     <a class="list-group-item list-item-user">
                         <figure class="avatar mr-2 float-left" data-initials="AB">
                         </figure>
@@ -114,6 +136,69 @@
                             </div>
                         </div>
                     </a>
+                    <a class="list-group-item list-item-user">
+                        <figure class="avatar mr-2 float-left" data-initials="CD">
+                        </figure>
+                        <div class="display-inline-block pt-1">
+                            <div>User 4</div>
+                            <div>
+                                <small>Some Text blabla ...</small>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="list-group-item list-item-user">
+                        <figure class="avatar mr-2 float-left" data-initials="EF">
+                            <div class="notification">2</div>
+                        </figure>
+                        <div class="display-inline-block pt-1">
+                            <div>User 5</div>
+                            <div>
+                                <small>Some Text blabla ...</small>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="list-group-item list-item-user">
+                        <figure class="avatar mr-2 float-left" data-initials="CD">
+                        </figure>
+                        <div class="display-inline-block pt-1">
+                            <div>User 4</div>
+                            <div>
+                                <small>Some Text blabla ...</small>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="list-group-item list-item-user">
+                        <figure class="avatar mr-2 float-left" data-initials="EF">
+                            <div class="notification">2</div>
+                        </figure>
+                        <div class="display-inline-block pt-1">
+                            <div>User 5</div>
+                            <div>
+                                <small>Some Text blabla ...</small>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="list-group-item list-item-user">
+                        <figure class="avatar mr-2 float-left" data-initials="CD">
+                        </figure>
+                        <div class="display-inline-block pt-1">
+                            <div>User 4</div>
+                            <div>
+                                <small>Some Text blabla ...</small>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="list-group-item list-item-user">
+                        <figure class="avatar mr-2 float-left" data-initials="EF">
+                            <div class="notification">2</div>
+                        </figure>
+                        <div class="display-inline-block pt-1">
+                            <div>User 5</div>
+                            <div>
+                                <small>Some Text blabla ...</small>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -123,24 +208,24 @@
                         <img src="https://source.unsplash.com/rriAI0nhcbc/100x100">
                         <div class="notification">2</div>
                     </figure>
-                    <span class="text-lg absolute-vertical-center">User 2</span>
-                    <button class="btn btn-gray-1 text-gray-4 btn-sm btn-circle right-0 absolute-vertical-center mr-2">
+                    <span class="text-lg absolute-y-center">User 2</span>
+                    <button class="btn btn-gray-1 text-gray-4 btn-sm btn-circle right-0 absolute-y-center mr-2">
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute-center" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
                     </button>
                 </div>
                 <div class="chat-main bg-light position-relative">
-                    <div class="messages p-4">
-                        <div class="message-left shadow round bg-white p-2 mb-2">
+                    <div class="messages p-4 text-gray-4">
+                        <div class="message-left shadow round bg-white p-2 mb-2" data-time="13:10">
                             <p class="m-0">
                                 Hi! I am User 2
                             </p>
                         </div>
-                        <div class="message-right shadow round bg-white p-2 mb-2">
+                        <div class="message-right shadow round bg-white p-2 mb-2" data-time="13:39">
                             <p class="m-0">
                                 Hello! I am Your Name.
                             </p>
                         </div>
-                        <div class="message-left shadow round bg-white p-2 mb-2">
+                        <div class="message-left shadow round bg-white p-2 mb-2" data-time="13:40">
                             <p class="m-0">
                                 Did you know this template is done with brisk.css? There is only very little additional css.
                             </p>

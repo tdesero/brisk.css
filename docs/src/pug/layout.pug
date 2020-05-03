@@ -20,6 +20,7 @@ html(lang='en')
                 "Grid": "grid.html",
                 "Utilites": "utilities.html",
                 "Elements": "elements.html",
+                "Typography": "typography.html",
               }
             each val, index in menu
               li.menu-item
@@ -40,6 +41,7 @@ html(lang='en')
         addToggle('.menu-container .overlay');
 
         addToggle('.dropdown-btn');
+        addToggle('.accordion-item .accordion-btn');
 
         function onClick(el, func, arg) {
           el.addEventListener('click', function (event) {

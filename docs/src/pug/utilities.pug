@@ -3,7 +3,7 @@ extends layout.pug
 block content
   h1.my-3 Utilities
   p.mb-4 The Framework has some useful utility classes for margin, padding, height and width as well as things like shadow or even hover effects.
-  h5 Margins
+  h5.mt-5.text-uppercase Margins
   p You can use the margins like <code>m&lt;direction&gt;-&lt;breakpoint&gt;-&lt;value&gt;</code>. Possible directions are l(left), r(right), t(top), b(bottom), x(horizontal), y(vertical). Values from <code>&lt;1-5&gt;</code> for default theme spacings, <code>10vw</code> and <code>20vw</code> for viewport-width and <code>auto</code>. If you put an <code>n</code> before the value like <code>mt-n5</code> the margin will be negative.
   .example-frame
     .row.border.round
@@ -21,7 +21,7 @@ block content
         <div class="m3 m-md-4 m-lg-10vw">...</div>
         <div class="ml-md-auto"></div>
         <div class="mt-sm-n3">This Element will have a negative margin and will overlapp the previous content from breakpoint sm and higher.</div>
-  h5 Paddings
+  h5.mt-5.text-uppercase Paddings
   p Paddings work exactly the same like margins. Except that they obviously can't have negative values.
   pre.code(data-lang="html").mb-4
     code
@@ -30,11 +30,15 @@ block content
         <div class="pb-1">...</div>
         <div class="py-2 px-4">...</div>
         <div class="pt-md-2 pt-sm-0">...</div>
-  h5 Positioning
+  h5.mt-5.text-uppercase Positioning
   p Available Position-Utilities are: <code>position-static</code>,<code>position-absolute</code>, <code>position-relative</code> and <code>position-fixed</code>. Use them combined with <code>top-0</code>, <code>bottom-0</code>, <code>left-0</code> and <code>right-0</code> to position elements.
-  h5.mt-5 Text utilities
+  p Because centering elements can be really tricky sometimes. There is an easy solution to force centering. You have to set e.g. <code>position: relative;</code> to the parent element and use one of the classes <code>.absolute-center</code>, <code>.absolute-y-center</code> or <code>.absolute-x-center</code>.This should do the trick.
+  .example-frame
+    .border.position-relative.round.p-2(style="height: 200px") .position-relative
+      .example-light.absolute-x-center.bottom-0 .absolute-x-center.bottom-0
+  h5.mt-5.text-uppercase Text utilities
   p.mb-5 You have some classes to speed up the styling of texts. Use the classes <code>text-left</code>, <code>text-center</code> or <code>text-right</code> to align the text horizontally. It is also possible to transform the text with <code>text-uppercase</code>, <code>text-lowercase</code> and <code>text-capitalize</code>.
-  h5 Colors
+  h5.mt-5.text-uppercase Colors
   p Use <code>text-&lt;color&gt;</code> to color text. Or <code>bg-&lt;color&gt;</code> to color the background of an element.
   .row.mb-5
     .col-4
@@ -49,16 +53,16 @@ block content
       .bg-success.round.text-white.p-2 success
     .col-4
       .bg-dark.round.text-white.p-2 dark
-  h5 Shadows
+  h5.mt-5.text-uppercase Shadows
   p There are two box-shadow options for your elements provided: <code>shadow</code><code>shadow-lg</code>
   button.btn.btn-primary.shadow.mr-1 shadow
   button.btn.btn-primary.shadow-lg.mb-5 shadow-lg
-  h5 Hover effects
+  h5.mt-5.text-uppercase Hover effects
   p use <code>hover-up</code> or <code>hover-shadow</code> for hover effects.
   button.btn.btn-primary.hover-up.mr-1 hover-up
   button.btn.btn-primary.hover-shadow.mr-1 hover-shadow
   button.btn.btn-primary.hover-shadow.hover-up combined
-  h5.mt-5 Cursors
+  h5.mt-5.text-uppercase Cursors
   p use <code>.cursor-default</code>, <code>.cursor-move</code>, <code>.cursor-pointer</code>,
   button.btn.btn-primary.mr-1.cursor-move cursor-move
   button.btn.btn-primary.mr-1.cursor-pointer cursor-pointer

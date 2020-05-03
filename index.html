@@ -63,6 +63,41 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
+            <div class="avatar-list-group mb-3">
+              <div class="avatar-list-item">
+                <figure class="avatar">
+                  <img src="https://source.unsplash.com/B4TjXnI0Y2c/100x100">
+                </figure>
+                <div class="avatar-info">
+                  <div class="absolute-y-center">
+                    <p class="h5">User 1</p>
+                    <p>Information</p>
+                  </div>
+                </div>
+              </div>
+              <div class="avatar-list-item">
+                <figure class="avatar">
+                  <img src="https://source.unsplash.com/B4TjXnI0Y2c/100x100">
+                </figure>
+                <div class="avatar-info">
+                  <div class="absolute-y-center">
+                    <p class="h5">User 1</p>
+                    <p>Information</p>
+                  </div>
+                </div>
+              </div>
+              <div class="avatar-list-item">
+                <figure class="avatar">
+                  <img src="https://source.unsplash.com/B4TjXnI0Y2c/100x100">
+                </figure>
+                <div class="avatar-info">
+                  <div class="absolute-y-center">
+                    <p class="h5">User 1</p>
+                    <p>Information</p>
+                  </div>
+                </div>
+              </div>
+            </div>
             <figure class="avatar mb-1 mr-1">
               <img src="https://source.unsplash.com/B4TjXnI0Y2c/100x100">
             </figure>
@@ -90,6 +125,65 @@
                 <a class="dropdown-list-item" href="#">Link 3</a>
               </div>
             </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>First</th>
+                  <th>Last</th>
+                  <th>Handle</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <th>2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <th>3</th>
+                  <td>Larry</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table>
+            <ul class="accordion round">
+              <li class="accordion-item">
+                <div class="accordion-btn"> Hallo 123
+                </div>
+                <div class="accordion-content-wrapper">
+                  <div class="accordion-content">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                  </div>
+                </div>
+              </li>
+              <li class="accordion-item">
+                <div class="accordion-btn"> Hallo 123
+                </div>
+                <div class="accordion-content-wrapper">
+                  <div class="accordion-content">
+                    Lorem ipsum 
+                  </div>
+                </div>
+              </li>
+              <li class="accordion-item">
+                <div class="accordion-btn"> Hallo 123
+                </div>
+                <div class="accordion-content-wrapper">
+                  <div class="accordion-content">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                  </div>
+                </div>
+              </li>
+            </ul>
             <h1>Headline 1</h1>
             <h2>Headline 2</h2>
             <h3>Headline 3</h3>
@@ -306,6 +400,7 @@
   addToggle('.menu-toggler');
   addToggle('.menu-container .overlay');
   addToggle('.dropdown .dropdown-btn');
+  addToggle('.accordion-item .accordion-btn');
 
   var menuItems = document.querySelectorAll('li.has-sublist>a');
   console.log(menuItems)

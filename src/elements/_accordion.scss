@@ -1,0 +1,56 @@
+.accordion {
+    @extend .list-group;
+}
+
+
+.accordion-item {
+    position: relative;
+    margin: 0;
+    @extend .list-group-item;
+    padding: 0; /* Overwrites list-group-item padding */
+
+    .accordion-content-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .accordion-content {
+      position: relative;
+      height: 0;
+      padding: $spacer;
+      margin-top: $spacer * -4;
+      transition: .5s margin;
+    }
+}
+
+.accordion-btn {
+    padding: $spacer;
+    cursor: pointer;
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 1.3em;
+        right: $spacer;
+        margin-right: .25em;
+        margin-bottom: .25em;
+        height: 0.5em;
+        width: 0.5em;
+        border: 0.1em solid currentColor;
+        border-top: 0;
+        border-left: 0;
+        transform: rotate(45deg);
+        transition: .3s transform;
+    }
+}
+
+.open {
+    .accordion-content {
+        height: auto;
+        margin-top: 0;
+    }
+
+    .accordion-btn::after {
+        transform: translateY(0.25em) rotate(225deg);
+    }
+}

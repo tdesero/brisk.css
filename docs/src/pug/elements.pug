@@ -2,7 +2,7 @@ extends layout.pug
 
 block content
   h1.mt-3 Elements
-  h5.mt-5 Navigation
+  h5.mt-5.text-uppercase Navigation
   p The Navigation Element is made to work as a Burger Menu and will only be fully visible at some breakpoint if you add the class <code>expand-&lt;breakpoint&gt;</code>. To open the menu add the class <code>open</code> to the <code>menu-container</code>-element.
   .example-frame.mb-3
     div(style="z-index: 1").nav-bar.bg-light
@@ -49,7 +49,7 @@ block content
         <div class="mt-fixed-menu container">
           <!-- your content -->
         </div>
-  h5.mt-5 Buttons
+  h5.mt-5.text-uppercase Buttons
   .example-frame.mb-3
     button.btn.btn-primary.mr-1 Primary
     button.btn.btn-secondary.mr-1 Secondary
@@ -107,7 +107,7 @@ block content
         <button class="btn btn-primary btn-circle btn-sm">A</button>
         <!-- loading -->
         <button class="btn btn-primary loading">Button</button>
-  h5.mt-5 Form
+  h5.mt-5.text-uppercase Form
   .example-frame.mb-3
     .form-group.w-50
       label.form-label Label
@@ -159,13 +159,14 @@ block content
             <span>No me</span>
           </label>
         </div>
-  h5.mt-5 Badges
-  h1 Headline 
-    span.color-primary.badge-sm small Badge
-    span.color-secondary.badge-sm.ml-1 small Badge
-  p Text 
-    span.color-primary.badge Badge
-  h5.mt-5 Modals
+  h5.mt-5.text-uppercase Badges
+  .example-frame
+    h1 Headline 
+      span.color-primary.badge-sm small Badge
+      span.color-secondary.badge-sm.ml-1 small Badge
+    p Text 
+      span.color-primary.badge Badge
+  h5.mt-5.text-uppercase Modals
   p To open a modal you need to add <code>.open</code> to the <code>.modal-container</code> element.
   a.btn.btn-primary(href='#my-modal' data-modal-button='') Open Modal
   #my-modal.modal-container
@@ -197,7 +198,7 @@ block content
             </div>
           </div>
         </div>
-  h5.mt-5 List groups
+  h5.mt-5.text-uppercase List groups
   p Style elements as list groups with <code>.list-group</code> for the wrapper element and <code>.list-group-item</code> for item elements. To add rounded corners you can add utility-classes like <code>round</code> to the wrapper element. If the element is <code>a</code> or <code>button</code> there will be a hover effect.
   .list-group.round.my-3
     a.list-group-item(href='#') Item
@@ -213,7 +214,7 @@ block content
             <a href="#" class="list-group-item">Item</a>
             <a href="#" class="list-group-item">Item</a>
           </div>
-  h5.mt-5 Dropdowns
+  h5.mt-5.text-uppercase Dropdowns
   p To open the dropdown simply add <code>.open</code>-class to the <code>.dropdown</code>-wrapper element.
   .dropdown
     button.btn.btn-primary.dropdown-btn Dropdown
@@ -230,5 +231,101 @@ block content
             <a class="dropdown-list-item" href="#">Link 1</a>
             <a class="dropdown-list-item" href="#">Link 2</a>
             <a class="dropdown-list-item" href="#">Link 3</a>
+          </div>
+        </div>
+  h5.mt-5.text-uppercase Accordions
+  p Add the class open to <code>.accordion-item</code> to show its content.
+  ul.accordion.round
+    li.accordion-item
+      .accordion-btn Item 1
+      .accordion-content-wrapper
+        .accordion-content.
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    li.accordion-item
+      .accordion-btn Item 2
+      .accordion-content-wrapper
+        .accordion-content.
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+  pre.code(data-lang="html")
+    code
+      :highlight(lang="html")
+        <ul class="accordion round">
+          <li class="accordion-item">
+            <div class="accordion-btn">Item 1</div>
+            <div class="accordion-content-wrapper">
+              <div class="accordion-content">
+                ...
+              </div>
+            </div>
+          </li>
+          <li class="accordion-item">
+            <div class="accordion-btn">Item 2</div>
+            <div class="accordion-content-wrapper">
+              <div class="accordion-content">
+                ...
+              </div>
+            </div>
+          </li>
+        </ul>
+  h5.text-uppercase.mt-5 Avatars
+  .example-frame
+    figure.avatar.mr-1(data-initials="AB")
+    figure.avatar.mr-1(data-initials="CD")
+      img(src="https://source.unsplash.com/B4TjXnI0Y2c/100x100")
+    figure.avatar.mr-1(data-initials="EF")
+      img(src="https://source.unsplash.com/B4TjXnI0Y2c/100x100")
+      .notification 1
+    br
+    br
+    .avatar-group.mb-2
+      figure.avatar(data-initials="AB")
+        img(src="https://source.unsplash.com/B4TjXnI0Y2c/100x100")
+      figure.avatar(data-initials="CD")
+        img(src="https://source.unsplash.com/xe68QiMaDrQ/100x100")
+      figure.avatar(data-initials="EF")
+    .avatar-list-group.mb-3
+      .avatar-list-item
+        figure.avatar
+          img(src='https://source.unsplash.com/B4TjXnI0Y2c/100x100')
+        .avatar-info
+          .absolute-y-center
+            p.h4 User 1
+            p Information
+      .avatar-list-item
+        figure.avatar
+          img(src='https://source.unsplash.com/B4TjXnI0Y2c/100x100')
+        .avatar-info
+          .absolute-y-center
+            p.h4 User 1
+            p Information
+      .avatar-list-item
+        figure.avatar
+          img(src='https://source.unsplash.com/B4TjXnI0Y2c/100x100')
+        .avatar-info
+          .absolute-y-center
+            p.h4 User 1
+            p Information
+  pre.code(data-lang="html")
+    code
+      :highlight(lang="html")
+        <figure class="avatar mb-1 mr-1" data-initials="AB">
+          <img src="https://source.unsplash.com/B4TjXnI0Y2c/100x100">
+          <div class="notification">1</div>
+        </figure>
+        <div class="avatar-group">
+          ...
+        </div>
+
+        <div class="avatar-list-group mb-3">
+          <div class="avatar-list-item">
+            <figure class="avatar">
+              <img src="https://source.unsplash.com/B4TjXnI0Y2c/100x100">
+            </figure>
+            <div class="avatar-info">
+              <div class="absolute-y-center">
+                <p class="h4">User 1</p>
+                <p>Information</p>
+              </div>
+            </div>
           </div>
         </div>

@@ -2,8 +2,8 @@
     display: inline-block;
     vertical-align: middle;
     position: relative;
-    height: 3.5rem;
-    width: 3.5rem;
+    height: $avatar-size;
+    width: $avatar-size;
     font-size: 1.5rem;
     letter-spacing: 0.05em;
     background-color: $primary;
@@ -25,5 +25,39 @@
         height: 100%;
         position: relative;
         border-radius: 50%;
+    }
+}
+
+.avatar-group {
+    .avatar {
+        box-sizing: content-box;
+        border: $border-width*2 solid $white;
+        @extend .ml-n2;
+        &:first-child {
+            margin-left: 0 !important;
+        }
+    }
+}
+
+.avatar-list-group {
+    @extend .list-group;
+}
+
+.avatar-list-item {
+    @extend .list-group-item;
+    @extend .clearfix;
+    position: relative;
+
+    .avatar {
+        margin-right: $spacer;
+        float: left;
+    }
+    .avatar-info {
+        float: left;
+        height: 100%;
+
+        p {
+            margin: 0;
+        }
     }
 }

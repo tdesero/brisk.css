@@ -59,6 +59,24 @@ ul {
   }
 }
 
+/* table style */
+table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  margin-bottom: $spacer;
+}
+
+th, td {
+  border-bottom: $border-width solid $border-color;
+  padding: $spacer/2;
+}
+
+thead th {
+  background-color: $light;
+}
+
 blockquote {
   border-left: .15rem solid $border-color;
   margin-left: 0;
@@ -99,7 +117,7 @@ blockquote {
   letter-spacing: 0.02em;
 }
 .text-spacing-3 {
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
 }
 
 //font-size

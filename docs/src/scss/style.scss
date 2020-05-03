@@ -3,7 +3,7 @@
 @import "../../../src/brisk.scss";
 
 h5 {
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 
 .code {
@@ -72,4 +72,31 @@ code {
 
 .hljs-attr {
   color: #999;
+}
+
+/* make padding visible */
+
+.show-padding-x {
+  position: relative;
+
+  &::after, &::before {
+    content: '';
+    @extend .bg-success;
+    opacity: 0.25;
+    width: 0;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: -1;
+  }
+
+  &::before {
+    padding-left: inherit;
+    left: 0;
+  }
+
+  &::after {
+    padding-right: inherit;
+    right: 0;
+  }
 }

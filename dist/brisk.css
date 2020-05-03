@@ -362,6 +362,9 @@ template {
 -------------- */
 /* MENU */
 /* Buttons */
+/* --------------
+    ELEMENTS
+-------------- */
 html {
   font-size: 16px;
   font-family: sans-serif;
@@ -422,6 +425,24 @@ ul ul {
   list-style-type: circle;
 }
 
+/* table style */
+table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+th, td {
+  border-bottom: 1px solid #DDD;
+  padding: 0.5rem;
+}
+
+thead th {
+  background-color: #F5F5F5;
+}
+
 blockquote {
   border-left: 0.15rem solid #DDD;
   margin-left: 0;
@@ -462,7 +483,7 @@ blockquote {
 }
 
 .text-spacing-3 {
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
 }
 
 .text-lg {
@@ -1191,7 +1212,7 @@ blockquote {
     margin-left: 100% !important;
   }
 }
-.clearfix::after {
+.clearfix::after, .avatar-list-item::after {
   content: "";
   float: none;
   clear: both;
@@ -1236,7 +1257,7 @@ blockquote {
   background-color: #363bd2 !important;
 }
 
-.color-primary, .list-group-item.active {
+.color-primary, .list-group-item.active, .active.accordion-item, .active.avatar-list-item {
   color: #363bd2 !important;
   background-color: #e7e7fa !important;
 }
@@ -1550,7 +1571,7 @@ blockquote {
   margin-bottom: -1rem !important;
 }
 
-.ml-n2 {
+.ml-n2, .avatar-group .avatar {
   margin-left: -1rem !important;
 }
 
@@ -4930,13 +4951,13 @@ blockquote {
   transform: translate(-50%, -50%) !important;
 }
 
-.absolute-vertical-center {
+.absolute-y-center {
   position: absolute !important;
   top: 50% !important;
   transform: translate(0, -50%) !important;
 }
 
-.absolute-horizontal-center {
+.absolute-x-center {
   position: absolute !important;
   left: 50% !important;
   transform: translate(-50%, 0) !important;
@@ -6373,13 +6394,13 @@ blockquote {
   border-radius: 0.3rem;
 }
 
-.list-group {
+.list-group, .accordion, .avatar-list-group {
   border: 1px solid #DDD;
   list-style: none;
   margin-left: 0;
 }
 
-.list-group-item {
+.list-group-item, .accordion-item, .avatar-list-item {
   margin: 0;
   padding: 1rem;
   border-bottom: 1px solid #DDD;
@@ -6387,11 +6408,11 @@ blockquote {
   text-decoration: none;
   color: #000000;
 }
-.list-group-item:last-child {
+.list-group-item:last-child, .accordion-item:last-child, .avatar-list-item:last-child {
   border-bottom: none;
 }
 /* if it is 'a' or 'button' element there should be a hover effect */
-a.list-group-item:hover, button.list-group-item:hover {
+a.list-group-item:hover, a.accordion-item:hover, a.avatar-list-item:hover, button.list-group-item:hover, button.accordion-item:hover, button.avatar-list-item:hover {
   background-color: #f5f5fd !important;
 }
 
@@ -6490,6 +6511,29 @@ a.list-group-item:hover, button.list-group-item:hover {
   border-radius: 50%;
 }
 
+.avatar-group .avatar {
+  box-sizing: content-box;
+  border: 2px solid #FFFFFF;
+}
+.avatar-group .avatar:first-child {
+  margin-left: 0 !important;
+}
+
+.avatar-list-item {
+  position: relative;
+}
+.avatar-list-item .avatar {
+  margin-right: 1rem;
+  float: left;
+}
+.avatar-list-item .avatar-info {
+  float: left;
+  height: 100%;
+}
+.avatar-list-item .avatar-info p {
+  margin: 0;
+}
+
 .notification {
   height: 1.3rem;
   min-width: 1.3rem;
@@ -6507,6 +6551,53 @@ a.list-group-item:hover, button.list-group-item:hover {
   font-weight: 600;
   letter-spacing: 0;
   z-index: 1;
+}
+
+.accordion-item {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  /* Overwrites list-group-item padding */
+}
+.accordion-item .accordion-content-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.accordion-item .accordion-content {
+  position: relative;
+  height: 0;
+  padding: 1rem;
+  margin-top: -4rem;
+  transition: 0.5s margin;
+}
+
+.accordion-btn {
+  padding: 1rem;
+  cursor: pointer;
+}
+.accordion-btn::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 1.3em;
+  right: 1rem;
+  margin-right: 0.25em;
+  margin-bottom: 0.25em;
+  height: 0.5em;
+  width: 0.5em;
+  border: 0.1em solid currentColor;
+  border-top: 0;
+  border-left: 0;
+  transform: rotate(45deg);
+  transition: 0.3s transform;
+}
+
+.open .accordion-content {
+  height: auto;
+  margin-top: 0;
+}
+.open .accordion-btn::after {
+  transform: translateY(0.25em) rotate(225deg);
 }
 
 /*# sourceMappingURL=brisk.css.map */
