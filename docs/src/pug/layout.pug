@@ -6,24 +6,25 @@ html(lang='en')
     link(rel="stylesheet" type="text/css" href="dist/style.css")
   body
     .nav-bar.position-fixed.bg-white.border-b
-      .nav-bar-cell.text-left
-        a(href="index.html" style="text-decoration: none;").h4.text-dark.text-bold Brisk.css
-      .nav-bar-cell.text-right.menu-container
-        .overlay
-        button.menu-toggler
-          .menu-icon.menu-style1.menu-icon-primary
-        .menu-content.menu-from-right.float-right.border-l
-          ul.menu-list
-            - 
-              var menu = { 
-                "Grid": "grid.html",
-                "Utilites": "utilities.html",
-                "Elements": "elements.html",
-                "Typography": "typography.html",
-              }
-            each val, index in menu
-              li.menu-item
-                a(href=val).menu-link #{index}
+      .nav-bar-row
+        .nav-bar-cell.text-left
+          a(href="index.html" style="text-decoration: none;").h4.text-dark.text-bold Brisk.css
+        .nav-bar-cell.text-right.menu-container
+          .overlay
+          button.menu-toggler
+            .menu-icon.menu-style1.menu-icon-primary
+          .menu-content.menu-from-right.float-right.border-l
+            ul.menu-list
+              - 
+                var menu = { 
+                  "Grid": "grid.html",
+                  "Utilites": "utilities.html",
+                  "Elements": "elements.html",
+                  "Typography": "typography.html",
+                }
+              each val, index in menu
+                li.menu-item
+                  a(href=val).menu-link #{index}
     .mt-fixed-menu.py-2.container
       block content
       script.

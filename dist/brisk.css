@@ -5881,6 +5881,13 @@ b, strong {
   display: table;
 }
 
+.nav-bar-row {
+  display: table-row;
+  position: relative;
+  z-index: 0;
+  background-color: inherit;
+}
+
 /* For fixed navigations */
 .pt-fixed-menu {
   padding-top: 4rem;
@@ -5924,18 +5931,21 @@ b, strong {
   background-color: #000;
   opacity: 0;
   transition: 0.5s opacity;
+  position: fixed;
+  will-change: opacity;
+  display: none;
 }
 .menu-container.open .menu-content {
   transform: none;
 }
 .menu-container.open .overlay {
   /*content: "";*/
-  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   opacity: 0.25;
+  display: block;
 }
 
 .menu-content {

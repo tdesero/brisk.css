@@ -6,24 +6,29 @@ block content
   p The Navigation Element is made to work as a Burger Menu and will only be fully visible at some breakpoint if you add the class <code>expand-&lt;breakpoint&gt;</code>. To open the menu add the class <code>open</code> to the <code>menu-container</code>-element.
   .example-frame.mb-3
     div(style="z-index: 1").nav-bar.bg-light
-      .nav-bar-cell
-        span logo
-      .nav-bar-cell.text-right.menu-container.expand-md
-        .overlay
-        button.menu-toggler
-          .menu-icon.menu-style1.menu-icon-primary
-        .menu-content.menu-from-left.bg-white.float-right
-          ul.menu-list
-            li.menu-item: a.menu-link Link 1
-            li.menu-item: a.menu-link Link 2
-            li.menu-item: a.menu-link Link 3
+      .nav-bar-row
+        .nav-bar-cell
+          span logo
+        .nav-bar-cell.text-right.menu-container.expand-md
+          .overlay
+          button.menu-toggler
+            .menu-icon.menu-style1.menu-icon-primary
+          .menu-content.menu-from-left.bg-white.float-right
+            ul.menu-list
+              li.menu-item: a.menu-link Link 1
+              li.menu-item: a.menu-link Link 2
+              li.menu-item: a.menu-link Link 3
   pre.code(data-lang="html")
     code
       :highlight(lang="html")
         <div class="nav-bar bg-light">
+          <div class="nav-bar-row">
             <div class="nav-bar-cell"><span>logo</span></div>
             <div class="nav-bar-cell text-right menu-container expand-md">
-                <div class="overlay"></div><button class="menu-toggler"><div class="menu-icon menu-style1 menu-icon-primary"></div></button>
+                <div class="overlay"></div>
+                <button class="menu-toggler">
+                  <div class="menu-icon menu-style1 menu-icon-primary"></div>
+                </button>
                 <div class="menu-content menu-from-left bg-white float-right">
                     <ul class="menu-list">
                         <li class="menu-item"><a class="menu-link">Link 1</a></li>
@@ -32,6 +37,7 @@ block content
                     </ul>
                 </div>
             </div>
+          </div>
         </div>
   p For the icon there are 3 Styles available.
   .example-frame.mb-3
