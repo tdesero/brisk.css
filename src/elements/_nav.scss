@@ -30,13 +30,18 @@
   Menu Logic
 -------------------*/
 
-.menu-container {
+.nav-bar-cell {
   padding: map-get($spacers, 2);
-  background-color: inherit;
-  color: inherit;
   display: table-cell;
   vertical-align: middle;
-  position: relative;
+  background-color: inherit;
+}
+
+.menu-container {
+  /*background-color: inherit;*/
+  color: inherit;
+  vertical-align: middle;
+  position: static !important;
 
   .logo {
     line-height: $line-height * 1rem;
@@ -79,7 +84,8 @@
   transform: translateY(-100%);
   transition: $menu-duration transform;
   //animation: $menu-duration menuAnimationFromTop;
-  background-color: inherit;
+  background-color: $white;
+  text-align: left;
 
   //menu types
   &.menu-from-right {
@@ -245,7 +251,8 @@
   border: 0;
   outline: 0;
   //margin-left: auto;
-  display: table;
+  //display: table;
+  vertical-align: middle;
   z-index: 99;
 }
 

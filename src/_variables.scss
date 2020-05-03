@@ -31,6 +31,8 @@ $colors: (
   "gray-4": $gray-4,
 ) !default;
 
+$base-text-color: $dark;
+
 /* --------------
     Typography
 -------------- */
@@ -38,11 +40,11 @@ $font-base-size: 16px !default;
 $font-family: sans-serif !default;
 $font-family-alt: serif !default;
 $line-height: 1.5 !default;
-$display-font-size1: 5vw;
-$display-font-size2: 4.5vw;
-$display-font-size3: 4vw;
-$display-font-size4: 3.5vw;
-$display-font-size5: 3vw;
+$display-font-size1: 4vw;
+$display-font-size2: 3.5vw;
+$display-font-size3: 3vw;
+$display-font-size4: 2.5vw;
+$display-font-size5: 2vw;
 
 /* --------------
     UTILITIES

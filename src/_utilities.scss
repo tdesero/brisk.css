@@ -18,6 +18,31 @@
   }
 }
 
+//letter-spacing
+
+.text-spacing-1 {
+  letter-spacing: 0.01em;
+}
+.text-spacing-2 {
+  letter-spacing: 0.02em;
+}
+.text-spacing-3 {
+  letter-spacing: 0.03em;
+}
+
+//font-size
+.text-lg {
+  font-size: 1.25em;
+}
+
+.text-sm {
+  font-size: 0.75em;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
 /*--------------
   Color
 --------------*/

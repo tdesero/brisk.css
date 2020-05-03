@@ -7,6 +7,8 @@
   outline: none;
   transition: $hover-duration box-shadow;
   padding: calc(.5em - #{$border-width});
+  -webkit-appearance: none;
+  -moz-appearance: none;
   &:focus {
     border: $border-width solid $primary;
     box-shadow: 0 0 0 $button-focus-width adjust-color($primary, $alpha: -0.5);
