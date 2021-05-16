@@ -26,9 +26,10 @@
     padding: $spacer/2;
     color: currentColor;
 
-    &:hover {
+    &:hover, &:focus {
         color: $primary;
         background-color: mix($primary, $white, 5%) !important;
+        outline: none;
     }
 }
 

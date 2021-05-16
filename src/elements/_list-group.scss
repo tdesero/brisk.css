@@ -23,7 +23,8 @@
 
 /* if it is 'a' or 'button' element there should be a hover effect */
 a.list-group-item, button.list-group-item {
-    &:hover {
+    &:hover, &:focus {
         background-color: mix($primary, $white, 5%) !important;
+        outline: none;
     }
 }

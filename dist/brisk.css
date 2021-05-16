@@ -6453,8 +6453,9 @@ b, strong {
   border-bottom: none;
 }
 /* if it is 'a' or 'button' element there should be a hover effect */
-a.list-group-item:hover, a.accordion-item:hover, a.avatar-list-item:hover, button.list-group-item:hover, button.accordion-item:hover, button.avatar-list-item:hover {
+a.list-group-item:hover, a.accordion-item:hover, a.avatar-list-item:hover, a.list-group-item:focus, a.accordion-item:focus, a.avatar-list-item:focus, button.list-group-item:hover, button.accordion-item:hover, button.avatar-list-item:hover, button.list-group-item:focus, button.accordion-item:focus, button.avatar-list-item:focus {
   background-color: #f5f5fd !important;
+  outline: none;
 }
 
 .dropdown {
@@ -6484,9 +6485,10 @@ a.list-group-item:hover, a.accordion-item:hover, a.avatar-list-item:hover, butto
   padding: 0.5rem;
   color: currentColor;
 }
-.dropdown-list-item:hover {
+.dropdown-list-item:hover, .dropdown-list-item:focus {
   color: #363bd2;
   background-color: #f5f5fd !important;
+  outline: none;
 }
 
 .dropdown-btn {
